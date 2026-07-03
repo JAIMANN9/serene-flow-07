@@ -77,7 +77,12 @@ export const blogPosts: BlogPost[] = [
       <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
 
       
-      <p>For college students, the Sunday Scaries are practically an institution. But what exactly are they? Psychologically speaking, the Sunday Scaries are a form of anticipatory anxiety. It's your brain's fight-or-flight response activating not because of an immediate threat, but because you are predicting stress in the near future. In the high-pressure environment of higher education, where there is always something due, it’s hard for the brain to ever fully power down.</p>
+      
+      <blockquote>
+        "For college students, the Sunday Scaries are practically an institution. But what exactly are they? Psychologically speaking, the Sunday Scaries are a form of anticipatory anxiety. It's your brain's fight-or-flight response activating not because of an immediate threat, but because you are predicting stress in the near future. In the high-pressure environment of higher education, where there is always something due, it’s hard for the brain to ever fully power down."
+      </blockquote>
+      <br/>
+
       
       <h2>Why We Sabotage Our Own Weekends</h2>
       <p>Part of the reason Sundays feel so awful is because of how we treat Fridays and Saturdays. In the name of "self-care" and decompressing, we often employ the avoidance strategy. We completely ignore our academic responsibilities for 48 hours, operating under the delusion that "Future Me" will happily handle it on Sunday. The result? Sunday becomes a garbage disposal for all the tasks we procrastinated, practically guaranteeing a day of intense stress and self-loathing.</p>
@@ -106,7 +111,12 @@ export const blogPosts: BlogPost[] = [
       <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
 
       
-      <p>This is imposter syndrome, and it thrives in the college environment. But what we don't talk about enough is how it specifically operates within our closest social circles.</p>
+      
+      <blockquote>
+        "This is imposter syndrome, and it thrives in the college environment. But what we don't talk about enough is how it specifically operates within our closest social circles."
+      </blockquote>
+      <br/>
+
       
       <h2>The Highlight Reel Problem</h2>
       <p>We all know that Instagram and LinkedIn are highlight reels, carefully curated to show only our best moments. But we often forget that our everyday conversations can be highlight reels, too. When we hang out in the dining hall or chat online, we naturally share our wins. We rarely say, "I cried for an hour today because I couldn't understand this reading," or "I got rejected from my top five internships."</p>
@@ -137,7 +147,12 @@ export const blogPosts: BlogPost[] = [
       <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
 
       
-      <p>This is digital paralysis. It's not just "bad time management"; it's a sophisticated psychological trap, and it's severely impacting the mental health and academic performance of college students today.</p>
+      
+      <blockquote>
+        "This is digital paralysis. It's not just "bad time management"; it's a sophisticated psychological trap, and it's severely impacting the mental health and academic performance of college students today."
+      </blockquote>
+      <br/>
+
       
       <h2>Why Our Brains Love to Doomscroll</h2>
       <p>To break the cycle, we have to understand why it happens. Social media algorithms are designed by some of the smartest engineers in the world to hijack the brain's dopamine reward system. When you scroll, you get intermittent, unpredictable rewards. This is the exact same psychological mechanism that makes slot machines so addictive.</p>
@@ -168,7 +183,12 @@ export const blogPosts: BlogPost[] = [
       <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
 
       
-      <p>But mental health professionals are raising red flags. The internet has a habit of flattening complex psychological concepts, leading to a culture where normal human conflict is heavily pathologized. And in the context of college—a time of intense social and personal growth—this misuse of therapy speak is causing real harm.</p>
+      
+      <blockquote>
+        "But mental health professionals are raising red flags. The internet has a habit of flattening complex psychological concepts, leading to a culture where normal human conflict is heavily pathologized. And in the context of college—a time of intense social and personal growth—this misuse of therapy speak is causing real harm."
+      </blockquote>
+      <br/>
+
       
       <h2>Weaponizing Boundaries</h2>
       <p>Let's take "boundaries," for example. A boundary is a rule you set for yourself regarding what you will and will not tolerate. ("If you yell at me, I will leave the room.") On the internet, however, "boundaries" have been weaponized as a tool to control others' behavior or to avoid accountability. Ignoring a friend who is going through a hard time because you "don't have the emotional bandwidth" isn't necessarily setting a boundary; sometimes, it's just being a bad friend.</p>
@@ -200,7 +220,12 @@ export const blogPosts: BlogPost[] = [
       <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
 
       
-      <p>Between exorbitant tuition, rising rent, overpriced textbooks, and the sheer cost of living, simply existing on a college campus is a masterclass in financial survival. Yet, because of the lingering shame surrounding money, students suffer in silence.</p>
+      
+      <blockquote>
+        "Between exorbitant tuition, rising rent, overpriced textbooks, and the sheer cost of living, simply existing on a college campus is a masterclass in financial survival. Yet, because of the lingering shame surrounding money, students suffer in silence."
+      </blockquote>
+      <br/>
+
       
       <h2>The Psychological Toll of Scarcity</h2>
       <p>Financial anxiety isn't just about the math; it fundamentally alters how your brain operates. Psychologists refer to this as the "scarcity mindset." When you are constantly worried about money, your cognitive bandwidth is severely depleted. It becomes harder to focus in class, retain information, and make long-term decisions because your brain is stuck in short-term survival mode.</p>
@@ -232,7 +257,12 @@ export const blogPosts: BlogPost[] = [
       <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
 
       
-      <p>Recent studies show that loneliness among college students is at epidemic levels. But how can a generation that is the most digitally connected in human history feel so isolated?</p>
+      
+      <blockquote>
+        "Recent studies show that loneliness among college students is at epidemic levels. But how can a generation that is the most digitally connected in human history feel so isolated?"
+      </blockquote>
+      <br/>
+
       
       <h2>The Illusion of Connection</h2>
       <p>The answer lies in the difference between networking and connecting. Social media provides the illusion of connection without the emotional intimacy that humans actually require. Liking someone's story or maintaining a Snapchat streak does not trigger the same neurochemical bonds as making eye contact, laughing together, or sharing physical space.</p>
@@ -263,7 +293,12 @@ export const blogPosts: BlogPost[] = [
       <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
 
       
-      <p>In college, this transforms into a dangerous addiction to academic validation. When you get an A, you experience a dopamine hit—a fleeting moment of superiority and relief. But it doesn't last. The baseline resets, and the anxiety immediately returns for the next assignment. When you get a bad grade, it doesn't just mean you misunderstood the material; it feels like an indictment of your entire identity.</p>
+      
+      <blockquote>
+        "In college, this transforms into a dangerous addiction to academic validation. When you get an A, you experience a dopamine hit—a fleeting moment of superiority and relief. But it doesn't last. The baseline resets, and the anxiety immediately returns for the next assignment. When you get a bad grade, it doesn't just mean you misunderstood the material; it feels like an indictment of your entire identity."
+      </blockquote>
+      <br/>
+
       
       <h2>The Cost of Perfectionism</h2>
       <p>This pursuit of perfectionism is catastrophic for mental health. It leads to severe burnout, cheating, and an inability to take risks. If your self-worth is entirely tied to your GPA, you will never take a challenging class outside your major for fear of tarnishing your record. You sacrifice genuine curiosity and learning at the altar of the 4.0.</p>
@@ -294,7 +329,12 @@ export const blogPosts: BlogPost[] = [
       <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
 
       
-      <p>When roommate dynamics turn toxic—whether due to passive-aggressive sticky notes, differing standards of cleanliness, or uninvited guests at 2 AM—your dorm room transforms from a sanctuary into a source of chronic stress.</p>
+      
+      <blockquote>
+        "When roommate dynamics turn toxic—whether due to passive-aggressive sticky notes, differing standards of cleanliness, or uninvited guests at 2 AM—your dorm room transforms from a sanctuary into a source of chronic stress."
+      </blockquote>
+      <br/>
+
       
       <h2>The Myth of the 'Chill' Roommate</h2>
       <p>The biggest mistake students make is trying too hard to be the "chill" roommate during the first few weeks. Out of a desperate desire to be liked, we say, "Oh, I don't care what time you turn the lights out!" or "Sure, your boyfriend can stay over whenever!" </p>

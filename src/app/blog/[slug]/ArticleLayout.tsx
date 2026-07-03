@@ -1,109 +1,104 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
+import Link from "next/link";
 import { Nav, Footer } from "../../../routes/index";
-import { BlogPost } from "../../../lib/blog-data";
+import { BlogPost, blogPosts } from "../../../lib/blog-data";
 
 export default function ArticleLayout({ post }: { post: BlogPost }) {
-  const { scrollY } = useScroll();
-  
-  // Parallax animations similar to careers page
-  const rightImgY = useTransform(scrollY, [0, 1000], [0, -120]);
-  const leftImgY = useTransform(scrollY, [0, 1000], [0, -80]);
-
   // Animation variants
   const reveal = {
-    initial: { opacity: 0, y: 30 },
+    initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-100px" },
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as any },
+    viewport: { once: true, margin: "-50px" },
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as any },
   };
 
+  // Get 3 other related posts
+  const otherPosts = blogPosts.filter(p => p.slug !== post.slug).slice(0, 3);
+
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden text-slate-900 bg-[#FBF8F3]">
-      {/* Soft top gradient for navbar visibility */}
-      <div 
-        className="absolute top-0 inset-x-0 h-[300px] pointer-events-none z-0"
-        style={{
-          background: "linear-gradient(to bottom, rgba(217, 228, 239, 0.4) 0%, rgba(242, 228, 234, 0.1) 40%, transparent 100%)"
-        }}
-      />
-      
+    <main className="relative min-h-screen w-full overflow-x-hidden text-slate-900 bg-[#F5F2EB]">
       <Nav />
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex flex-col justify-center pt-32 pb-16 md:pb-24 px-6 md:px-10 overflow-visible z-20">
-        
-        {/* Left Edge Image - Anchored to bottom */}
-        <motion.img 
-          src="/Untitled design (42).svg" 
-          alt="" 
-          initial={{ x: "-100%", opacity: 0 }}
-          animate={{ x: "-40%", opacity: 1 }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] as any }}
-          className="absolute left-0 bottom-[-10%] w-[35vw] max-w-[450px] pointer-events-none z-10 drop-shadow-[0_10px_25px_rgba(0,0,0,0.05)] object-contain mix-blend-multiply"
-          style={{ y: leftImgY }}
-        />
-
-        {/* Right Edge Image - Anchored to bottom */}
-        <motion.img 
-          src="/Untitled design (63).svg" 
-          alt="" 
-          initial={{ x: "100%", opacity: 0 }}
-          animate={{ x: "40%", opacity: 1 }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] as any }}
-          className="absolute right-0 bottom-[-10%] w-[32vw] max-w-[420px] pointer-events-none z-10 drop-shadow-[0_10px_25px_rgba(0,0,0,0.05)] object-contain mix-blend-multiply"
-          style={{ y: rightImgY }}
-        />
-
-        <motion.div {...reveal} className="relative mx-auto max-w-[1024px] text-center z-20 pt-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white mb-8 shadow-sm">
-            <Sparkles className="w-4 h-4 text-[#1E3A8A]" />
-            <span className="text-[13px] font-bold text-[#1E3048] tracking-wide uppercase">{post.tag}</span>
+      <section className="relative pt-32 pb-12 md:pt-40 md:pb-16 px-6 md:px-10 z-20">
+        <motion.div {...reveal} className="relative mx-auto max-w-[800px] text-center flex flex-col items-center">
+          
+          <div className="mb-6">
+            <span className="inline-block px-4 py-1.5 bg-[#1E3048] text-white rounded-full text-[12px] font-bold tracking-widest uppercase">
+              {post.tag}
+            </span>
           </div>
 
-          <h1 className="main-page-title mb-8 leading-[1.2] !text-[40px] md:!text-[56px]">
+          <h1 className="font-serif text-[#1E3048] mb-8 leading-[1.1] text-[42px] md:text-[56px] lg:text-[64px] tracking-tight">
             {post.title}
           </h1>
+
+          <p className="text-[#4F6072] text-[18px] md:text-[22px] leading-relaxed font-serif italic max-w-[700px] mx-auto">
+            "{post.summary}"
+          </p>
+
+          <div className="w-12 h-[1px] bg-[#1E3048]/20 mt-12 mx-auto"></div>
         </motion.div>
       </section>
 
-      <section className="relative py-12 md:py-24 px-6 md:px-10 overflow-visible z-20">
-        <div className="mx-auto max-w-[1024px]">
-          
-          {/* Two-Column Section Header */}
-          <div className="flex flex-col md:flex-row text-left gap-10 md:gap-20 mb-20 relative z-20">
-            <h3 className="main-page-title flex-1 leading-[1.1] !text-[36px] md:!text-[44px]">
-              Article Overview
-            </h3>
-            <div className="flex-1 space-y-4 text-[#4F6072] text-[18px] md:text-[20px] leading-relaxed font-sans italic font-medium border-l-4 border-[#1E3A8A] pl-6">
-              <p>{post.summary}</p>
-            </div>
+      {/* Main Content */}
+      <section className="relative py-10 px-6 md:px-10 z-20">
+        <motion.div {...reveal} className="max-w-[700px] mx-auto text-left relative z-20">
+          <div 
+            className="prose prose-lg max-w-none text-[#213145]
+                       prose-h2:font-serif prose-h2:text-[32px] md:prose-h2:text-[36px] prose-h2:text-[#1E3048] prose-h2:mt-16 prose-h2:mb-6 prose-h2:font-medium
+                       prose-p:text-[18px] md:prose-p:text-[20px] prose-p:leading-[1.9] prose-p:text-[#3C4A5A] prose-p:mb-8 prose-p:font-sans
+                       prose-strong:text-[#1E3048] prose-strong:font-bold
+                       prose-ul:text-[18px] prose-ul:text-[#3C4A5A] prose-ul:leading-[1.9]
+                       prose-li:mb-4
+                       prose-blockquote:border-l-0 prose-blockquote:pl-0 prose-blockquote:my-12 prose-blockquote:text-center
+                       prose-blockquote:font-serif prose-blockquote:text-[24px] md:prose-blockquote:text-[28px] prose-blockquote:text-[#1E3048] prose-blockquote:italic prose-blockquote:leading-[1.5]"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+        </motion.div>
+      </section>
+
+      {/* Read Other Blogs */}
+      <section className="relative py-24 px-6 md:px-10 bg-[#F5F2EB] border-t border-[#1E3048]/10 mt-12">
+        <div className="max-w-[1024px] mx-auto">
+          <h2 className="font-serif text-[36px] text-[#1E3048] text-center mb-16">Read Other Blogs</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {otherPosts.map((p, i) => (
+              <Link href={`/blog/${p.slug}`} key={p.slug} className="block group">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className="cursor-pointer flex flex-col h-full"
+                >
+                  <div className="relative w-full aspect-[1.6] rounded-[16px] overflow-hidden mb-5 bg-[#EAE5D9]">
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      className="w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-[1.05]"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <span className="inline-block px-[14px] py-[4px] bg-[#EAE5D9] text-[#4F4655] rounded-full text-[11px] font-bold tracking-widest uppercase">
+                      {p.tag}
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-[20px] text-[#213145] leading-[1.3] group-hover:text-[#1E3A8A] transition-colors">
+                    {p.title}
+                  </h3>
+                </motion.div>
+              </Link>
+            ))}
           </div>
-
-          {/* Article Content Box (inspired by careers form container) */}
-          <motion.div {...reveal} className="max-w-[850px] mx-auto text-left relative z-20">
-            <div className="bg-white/70 backdrop-blur-2xl p-8 md:p-16 rounded-[2.5rem] border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)]">
-              
-              <div 
-                className="prose prose-lg max-w-none text-[#213145]
-                           prose-h2:font-serif prose-h2:text-[32px] prose-h2:text-[#1E3048] prose-h2:mt-12 prose-h2:mb-6
-                           prose-p:text-[17px] prose-p:leading-[1.8] prose-p:text-[#4F6072] prose-p:mb-6
-                           prose-strong:text-[#1E3048] prose-strong:font-bold
-                           prose-ul:text-[17px] prose-ul:text-[#4F6072] prose-ul:leading-[1.8]
-                           prose-li:mb-3"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
-
-            </div>
-          </motion.div>
-
         </div>
       </section>
 
-      {/* Hyper minimalist footer override */}
-      <div className="relative w-full bg-transparent mt-12">
+      {/* Footer */}
+      <div className="relative w-full bg-transparent">
         <style>{`
           .footer-black-override * {
             color: #0f172a !important;
