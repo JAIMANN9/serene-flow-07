@@ -4,11 +4,12 @@ import { blogPosts } from "@/lib/blog-data";
 import ArticleLayout from "./ArticleLayout";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const resolvedParams = await params;
+  const post = blogPosts.find((p) => p.slug === resolvedParams.slug);
 
   if (!post) {
     return {
@@ -46,8 +47,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+export default async function BlogPostPage({ params }: Props) {
+  const resolvedParams = await params;
+  const post = blogPosts.find((p) => p.slug === resolvedParams.slug);
 
   if (!post) {
     notFound();
