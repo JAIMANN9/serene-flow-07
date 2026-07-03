@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { blogPosts } from "../lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.peacecode.in";
@@ -46,10 +47,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...legalPages,
   ];
 
-  return allPages.map((page) => ({
-    url: `${baseUrl}${page.route}`,
-    lastModified: new Date("2026-06-29").toISOString(),
-    changeFrequency: page.changeFrequency,
-    priority: page.priority,
+  const blogPages = blogPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date("2026-07-03").toISOString(),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
   }));
+
+  return [
+    ...allPages.map((page) => ({
+      url: `${baseUrl}${page.route}`,
+      lastModified: new Date("2026-06-29").toISOString(),
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
+    })),
+    ...blogPages,
+  ];
 }
