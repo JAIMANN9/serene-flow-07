@@ -17,15 +17,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: \`\${post.title} | PeaceCode Blog\`,
+    title: `${post.title} | PeaceCode Blog`,
     description: post.summary,
     alternates: {
-      canonical: \`https://www.peacecode.in/blog/\${post.slug}\`,
+      canonical: `https://www.peacecode.in/blog/${post.slug}`,
     },
     openGraph: {
       title: post.title,
       description: post.summary,
-      url: \`https://www.peacecode.in/blog/\${post.slug}\`,
+      url: `https://www.peacecode.in/blog/${post.slug}`,
       type: "article",
       images: [
         {
