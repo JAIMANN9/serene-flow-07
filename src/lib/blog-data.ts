@@ -17,6 +17,8 @@ export const blogPosts: BlogPost[] = [
     content: `
       <h2>The Aesthetic of Exhaustion</h2>
       <p>Scroll through TikTok or Instagram Reels on any given Tuesday night, and you'll inevitably stumble across a "study with me" vlog. There's the iced coffee condensation, the perfectly color-coded iPad notes, the Lo-Fi beats, and the subtle flex of a timestamp reading 3:00 AM. We have successfully romanticized the grind, turning sleep deprivation and chronic stress into badges of honor. But beneath the aesthetic filters, hustle culture is quietly destroying the mental health of an entire generation of college students.</p>
+      <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
+
       
       <h2>When Did Productivity Become Toxic?</h2>
       <p>The core message of hustle culture is simple but dangerous: if you're not constantly working, you're falling behind. In college, this translates to taking 18 credits, holding an internship, leading three clubs, and somehow maintaining a vibrant social life. We are taught that rest is a reward that must be earned rather than a fundamental human need. This mindset creates a perpetual cycle of guilt. When we are working, we feel we should be working harder. When we are resting, we feel guilty for not working.</p>
@@ -45,6 +47,8 @@ export const blogPosts: BlogPost[] = [
     content: `
       <h2>The Era of the Undefined</h2>
       <p>Welcome to college dating in the modern era, where nobody is actually dating, everyone is "just talking," and the scariest question you can ask is, "What are we?" The rise of the "situationship"—a romantic arrangement that exists in the gray area between a casual hookup and a committed relationship—has become the defining relationship status of Gen Z on campus. While situationships offer the illusion of low stakes and freedom, they often come with a massive, hidden cost to our mental health.</p>
+      <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
+
       
       <h2>The Anxiety of Ambiguity</h2>
       <p>Human beings are wired for clarity. When we don't know where we stand with someone we care about, our brains go into overdrive trying to fill in the blanks. Is it okay to double text? Will asking them to my formal come off as "too clingy"? This constant state of hyper-vigilance is exhausting. Situationships thrive on plausible deniability. Because no rules were established, no rules can technically be broken, leaving you feeling entirely unjustified in your heartbreak when things eventually end.</p>
@@ -70,6 +74,8 @@ export const blogPosts: BlogPost[] = [
     content: `
       <h2>The 4 PM Sunday Phenomenon</h2>
       <p>It usually hits around 4:00 PM on Sunday. You're lying in bed, maybe watching Netflix, when suddenly a cold sense of dread washes over you. You remember the discussion board post due at midnight, the midterm on Tuesday, and the mountain of laundry sitting in the corner. The weekend is effectively over, and the week hasn't even begun. Welcome to the "Sunday Scaries."</p>
+      <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
+
       
       <p>For college students, the Sunday Scaries are practically an institution. But what exactly are they? Psychologically speaking, the Sunday Scaries are a form of anticipatory anxiety. It's your brain's fight-or-flight response activating not because of an immediate threat, but because you are predicting stress in the near future. In the high-pressure environment of higher education, where there is always something due, it’s hard for the brain to ever fully power down.</p>
       
@@ -97,6 +103,8 @@ export const blogPosts: BlogPost[] = [
     content: `
       <h2>The Notification Dread</h2>
       <p>Your phone buzzes. It's the group chat. Friend A just landed a highly competitive summer internship. Friend B got a 98 on their organic chemistry midterm. Friend C is running for student government. You reply with an enthusiastic "OMG CONGRATS! SO PROUD OF YOU!" all while staring at your own laptop screen, paralyzed by an impending deadline and a GPA that you feel is utterly mediocre. You feel like a fraud. You feel like they made a mistake letting you into this college, and eventually, everyone is going to figure it out.</p>
+      <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
+
       
       <p>This is imposter syndrome, and it thrives in the college environment. But what we don't talk about enough is how it specifically operates within our closest social circles.</p>
       
@@ -126,6 +134,8 @@ export const blogPosts: BlogPost[] = [
     content: `
       <h2>The Digital Paralysis Trap</h2>
       <p>You sit down at your desk. You open your laptop. You open a blank Google Doc. You write your name. Then, an uncomfortable feeling—boredom, anxiety, dread—washes over you. Without even thinking, your hand reaches for your phone. You open TikTok. You tell yourself, "Just five minutes to relax my brain." Suddenly, the room is dark, three hours have passed, and you haven't written a single word. You feel a deep sense of shame and anxiety, yet you keep scrolling. </p>
+      <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
+
       
       <p>This is digital paralysis. It's not just "bad time management"; it's a sophisticated psychological trap, and it's severely impacting the mental health and academic performance of college students today.</p>
       
@@ -155,6 +165,8 @@ export const blogPosts: BlogPost[] = [
     content: `
       <h2>The Rise of 'Therapy Speak'</h2>
       <p>If you've spent any time on TikTok or X (formerly Twitter) recently, you are likely fluent in a very specific dialect: Therapy Speak. Suddenly, everyone is establishing "boundaries," cutting off "toxic" friends, identifying "narcissists," and accusing their exes of "gaslighting." On the surface, this mainstreaming of mental health vocabulary seems like a massive win for a generation focused on wellness. We have the language to describe our experiences! </p>
+      <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
+
       
       <p>But mental health professionals are raising red flags. The internet has a habit of flattening complex psychological concepts, leading to a culture where normal human conflict is heavily pathologized. And in the context of college—a time of intense social and personal growth—this misuse of therapy speak is causing real harm.</p>
       
@@ -185,6 +197,8 @@ export const blogPosts: BlogPost[] = [
     content: `
       <h2>The Elephant in the Dorm Room</h2>
       <p>When we talk about college mental health, we talk about academic pressure, breakups, and social media. What we rarely talk about is the crushing weight of checking your bank account and seeing $12.43 when you still need to buy groceries for the week. Financial anxiety is one of the most pervasive, yet deeply stigmatized, mental health issues facing college students today.</p>
+      <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
+
       
       <p>Between exorbitant tuition, rising rent, overpriced textbooks, and the sheer cost of living, simply existing on a college campus is a masterclass in financial survival. Yet, because of the lingering shame surrounding money, students suffer in silence.</p>
       
@@ -215,6 +229,8 @@ export const blogPosts: BlogPost[] = [
     content: `
       <h2>Crowded But Isolated</h2>
       <p>College brochures sell a very specific fantasy: lounging on the quad with a diverse group of lifelong friends, effortlessly laughing while tossing a frisbee. The reality for many students is starkly different. You can sit in a lecture hall with 300 people, live in a building with 500 people, and scroll past thousands of people on your feed, yet still feel profoundly, crushingly lonely.</p>
+      <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
+
       
       <p>Recent studies show that loneliness among college students is at epidemic levels. But how can a generation that is the most digitally connected in human history feel so isolated?</p>
       
@@ -244,6 +260,8 @@ export const blogPosts: BlogPost[] = [
     content: `
       <h2>The 'Gifted Kid' Pipeline</h2>
       <p>If you grew up being praised primarily for your intelligence—if you were the "gifted kid," the one who always had the right answer, the one whose parents proudly displayed their report cards—you likely entered college with a heavy burden. You learned early on that love, praise, and worth were conditional on your performance. You didn't just want good grades; you needed them to feel like you mattered.</p>
+      <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
+
       
       <p>In college, this transforms into a dangerous addiction to academic validation. When you get an A, you experience a dopamine hit—a fleeting moment of superiority and relief. But it doesn't last. The baseline resets, and the anxiety immediately returns for the next assignment. When you get a bad grade, it doesn't just mean you misunderstood the material; it feels like an indictment of your entire identity.</p>
       
@@ -273,6 +291,8 @@ export const blogPosts: BlogPost[] = [
     content: `
       <h2>The Cinderblock Crucible</h2>
       <p>For most college students, freshman year is the first time they have ever had to share a bedroom. Suddenly, you are living three feet away from a stranger in a room the size of a walk-in closet. The roommate relationship is highly unique; they aren't your sibling, they aren't your parent, and they might not even be your friend. Yet, they have a massive impact on your daily peace, sleep schedule, and overall mental health.</p>
+      <img src="https://placehold.co/800x400/E2E8F0/1E3048?text=Article+Image" alt="Article Placeholder" class="w-full rounded-[14px] my-8 object-cover shadow-sm border border-[rgba(0,0,0,0.02)]" />
+
       
       <p>When roommate dynamics turn toxic—whether due to passive-aggressive sticky notes, differing standards of cleanliness, or uninvited guests at 2 AM—your dorm room transforms from a sanctuary into a source of chronic stress.</p>
       
