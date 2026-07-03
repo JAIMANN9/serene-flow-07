@@ -2,7 +2,9 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Search } from "lucide-react";
+import Link from "next/link";
 import { Nav, Footer } from "./index";
+import { blogPosts } from "../lib/blog-data";
 
 export default function BlogRoute() {
   const { scrollY } = useScroll();
@@ -12,38 +14,7 @@ export default function BlogRoute() {
   const cloudRightY = useTransform(scrollY, [0, 800], [0, -160]);
   const birdsY = useTransform(scrollY, [0, 800], [0, -80]);
 
-  const posts = [
-    {
-      tag: "News",
-      title: "PeaceCode Selected for Campus Wellness Model",
-      img: "/ChatGPT Image Jun 3, 2026, 03_03_06 PM.png",
-    },
-    {
-      tag: "News",
-      title: "PeaceCode Appoints Former Campus Counselor to Lead Clinical Strategy",
-      img: "/ChatGPT Image Jun 3, 2026, 03_08_14 PM.png",
-    },
-    {
-      tag: "News",
-      title: "PeaceCode raises $6.5M Seed led by General Catalyst",
-      img: "/ChatGPT Image Jun 3, 2026, 03_35_21 PM.png",
-    },
-    {
-      tag: "Anxiety & Health",
-      title: "Understanding Insurance Coverage for Student Therapy: Your Questions Answered",
-      img: "/ChatGPT Image Jun 3, 2026, 03_03_06 PM.png", 
-    },
-    {
-      tag: "For Peers",
-      title: "Having the Hard Conversations About Mental Health",
-      img: "/ChatGPT Image Jun 3, 2026, 03_08_14 PM.png", 
-    },
-    {
-      tag: "For Students",
-      title: "Finding Fulfillment When Studying Solo",
-      img: "/ChatGPT Image Jun 3, 2026, 03_35_21 PM.png", 
-    },
-  ];
+  const posts = blogPosts;
 
   const categories = ["All", "Money & Healthcare", "For Caregivers", "News", "Improving Care", "For Seniors"];
 
@@ -124,34 +95,35 @@ export default function BlogRoute() {
           {/* Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 text-left">
             {posts.map((p, i) => (
-              <motion.div
-                key={p.title + i}
-                {...reveal}
-                transition={{ duration: 0.8, delay: (i%3) * 0.1, ease: [0.22, 1, 0.36, 1] as any }}
-                className="group cursor-pointer flex flex-col h-full"
-              >
-                {/* Image */}
-                <div className="relative w-full aspect-[1.5] rounded-[14px] overflow-hidden mb-4 bg-slate-100 border border-[rgba(0,0,0,0.02)] shadow-sm">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    className="w-full h-full object-cover transition-transform duration-[600ms] group-hover:scale-[1.03]"
-                    loading="lazy"
-                  />
-                </div>
-                
-                {/* Tag */}
-                <div className="mb-2.5">
-                  <span className="inline-block px-[14px] py-[4px] bg-[#E3DCE7] text-[#4F4655] rounded-full text-[11px] font-bold tracking-[0.02em]">
-                    {p.tag}
-                  </span>
-                </div>
+              <Link href={`/blog/${p.slug}`} key={p.slug} className="block group">
+                <motion.div
+                  {...reveal}
+                  transition={{ duration: 0.8, delay: (i%3) * 0.1, ease: [0.22, 1, 0.36, 1] as any }}
+                  className="cursor-pointer flex flex-col h-full"
+                >
+                  {/* Image */}
+                  <div className="relative w-full aspect-[1.5] rounded-[14px] overflow-hidden mb-4 bg-slate-100 border border-[rgba(0,0,0,0.02)] shadow-sm">
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      className="w-full h-full object-cover transition-transform duration-[600ms] group-hover:scale-[1.03]"
+                      loading="lazy"
+                    />
+                  </div>
+                  
+                  {/* Tag */}
+                  <div className="mb-2.5">
+                    <span className="inline-block px-[14px] py-[4px] bg-[#E3DCE7] text-[#4F4655] rounded-full text-[11px] font-bold tracking-[0.02em]">
+                      {p.tag}
+                    </span>
+                  </div>
 
-                {/* Title */}
-                <h3 className="font-sans text-[17px] text-[#213145] leading-[1.3] font-medium group-hover:text-[#1E3A8A] transition-colors">
-                  {p.title}
-                </h3>
-              </motion.div>
+                  {/* Title */}
+                  <h3 className="font-sans text-[17px] text-[#213145] leading-[1.3] font-medium group-hover:text-[#1E3A8A] transition-colors">
+                    {p.title}
+                  </h3>
+                </motion.div>
+              </Link>
             ))}
           </div>
 
