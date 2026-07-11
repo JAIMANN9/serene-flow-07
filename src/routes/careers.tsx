@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, CheckCircle2, CloudUpload, Sparkles, HeartHandshake, Brain, Terminal, Loader2 } from "lucide-react";
 import { Nav, Footer } from "./index";
 import { useState, useRef } from "react";
-import { submitCareerApplication } from "../app/actions";
 
 /**
  * CareersRoute Component
@@ -76,16 +75,25 @@ export default function CareersRoute() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    const formData = new FormData(e.currentTarget);
+    const formElement = e.currentTarget;
+    const formData = new FormData(formElement);
+    
+    // Netlify requires the form-name field to intercept the request
+    formData.set("form-name", "careers-application");
+    
     if (selectedFile) {
       formData.set("resume", selectedFile);
     }
 
     try {
-      const res = await submitCareerApplication(formData);
-      if (res.success) {
+      const res = await fetch("/", {
+        method: "POST",
+        body: formData, // fetch will automatically set multipart/form-data boundary
+      });
+
+      if (res.ok) {
         setSubmitStatus("success");
-        e.currentTarget.reset();
+        formElement.reset();
         setSelectedFile(null);
       } else {
         setSubmitStatus("error");
@@ -207,7 +215,19 @@ export default function CareersRoute() {
                 <p className="text-[#4F6072] text-[15px]">Fill out the form below to apply for any of our open roles.</p>
               </div>
 
-              <form className="space-y-6" onSubmit={handleSubmit}>
+              <form 
+                className="space-y-6" 
+                onSubmit={handleSubmit}
+                name="careers-application"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+              >
+                {/* Hidden inputs required for Netlify Forms routing */}
+                <input type="hidden" name="form-name" value="careers-application" />
+                <p className="hidden">
+                  <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+
                 {submitStatus === "success" && (
                   <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-2xl p-4 mb-6 flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 text-emerald-500" />
