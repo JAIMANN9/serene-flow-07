@@ -16,6 +16,20 @@ function HoverPhrase({ children }: { children: React.ReactNode }) {
   );
 }
 
+/**
+ * PeaceBotRoute Component
+ * 
+ * @description
+ * Renders the primary landing and interaction page for the AI PeaceBot feature.
+ * Features parallax scrolling, animated feature sections, and a demonstration chat UI.
+ * 
+ * @backend_integration
+ * - Currently, the chat interactions shown on this page are static demonstrations.
+ * - Future backend integration should connect the mock chat UI to a real LLM endpoint (e.g. OpenAI/Anthropic proxy).
+ * - User analytics events (e.g., "Clicked Start Chat") should be wired up to an analytics provider.
+ * 
+ * @returns {JSX.Element} The rendered PeaceBot page.
+ */
 export default function PeaceBotRoute() {
   const { scrollY } = useScroll();
   const rightImgY = useTransform(scrollY, [0, 1000], [0, -120]);
@@ -84,7 +98,7 @@ export default function PeaceBotRoute() {
 
       {/* Top Right Cloud */}
       <motion.img
-        src="/Untitled design (35).svg"
+        src="/cloud-bg-1.svg"
         alt=""
         initial={{ x: "20%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -95,7 +109,7 @@ export default function PeaceBotRoute() {
 
       {/* Bottom Left Cloud */}
       <motion.img
-        src="/Untitled design (41).svg"
+        src="/cloud-bg-2.svg"
         alt=""
         initial={{ x: "-20%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -119,7 +133,7 @@ export default function PeaceBotRoute() {
           style={{ bottom: "30%", right: "8%" }}
         >
           <img
-            src="/Untitled design (67).svg"
+            src="/bg-decoration-1.svg"
             alt=""
             className="w-[9vw] max-w-[120px] min-w-[60px] drop-shadow-md"
             style={{ transform: "scaleX(-1)" }}
@@ -133,7 +147,7 @@ export default function PeaceBotRoute() {
           style={{ bottom: "20%", right: "15%" }}
         >
           <img
-            src="/Untitled design (68).svg"
+            src="/bg-decoration-2.svg"
             alt=""
             className="w-[7vw] max-w-[90px] min-w-[45px] drop-shadow-sm opacity-90"
             style={{ transform: "scaleX(-1)" }}
@@ -147,7 +161,7 @@ export default function PeaceBotRoute() {
           style={{ bottom: "38%", right: "16%" }}
         >
           <img
-            src="/Untitled design (68).svg"
+            src="/bg-decoration-2.svg"
             alt=""
             className="w-[6vw] max-w-[80px] min-w-[40px] drop-shadow-sm opacity-85"
             style={{ transform: "scaleX(-1)" }}
@@ -161,7 +175,7 @@ export default function PeaceBotRoute() {
           style={{ bottom: "12%", right: "22%" }}
         >
           <img
-            src="/Untitled design (67).svg"
+            src="/bg-decoration-1.svg"
             alt=""
             className="w-[5vw] max-w-[70px] min-w-[35px] drop-shadow-sm opacity-80"
             style={{ transform: "scaleX(-1)" }}
@@ -175,7 +189,7 @@ export default function PeaceBotRoute() {
           style={{ bottom: "44%", right: "24%" }}
         >
           <img
-            src="/Untitled design (67).svg"
+            src="/bg-decoration-1.svg"
             alt=""
             className="w-[5.5vw] max-w-[75px] min-w-[35px] drop-shadow-sm opacity-75"
             style={{ transform: "scaleX(-1)" }}
@@ -189,7 +203,7 @@ export default function PeaceBotRoute() {
           style={{ bottom: "28%", right: "26%" }}
         >
           <img
-            src="/Untitled design (68).svg"
+            src="/bg-decoration-2.svg"
             alt=""
             className="w-[4vw] max-w-[60px] min-w-[30px] drop-shadow-sm opacity-70"
             style={{ transform: "scaleX(-1)" }}
@@ -248,10 +262,10 @@ export default function PeaceBotRoute() {
 
           <div className="w-full max-w-5xl flex flex-col mx-auto">
             {[
-              { icon: "/Untitled design (58).svg", label: "24/7 Emotional Check-ins", desc: "Structured support conversations available any hour, any day. Because difficult moments do not follow a schedule. Whether it's a sudden wave of panic at 3 AM or a subtle sense of unease before a morning class, PeaceBot is always awake and ready to listen without judgment. It offers a continuous presence that you can rely on whenever you need a safe space to unpack your thoughts." },
-              { icon: "/Untitled design (59).svg", label: "Exam Anxiety Support", desc: "Calm guidance before, during, and after high-stakes assessments. It helps separate real concerns from anxiety spirals, allowing you to focus on your preparation rather than your fear. By offering tailored grounding techniques and realistic reassurance, it ensures that the pressure feels manageable, helping you approach your exams with a clear, steady mind." },
-              { icon: "/Untitled design (60).svg", label: "Grounding Exercises", desc: "Quick mindfulness anchors when your thoughts spiral. Breathing cycles, body scans, and gentle recentering exercises — available instantly to help you regain control. These tools are meticulously designed to pull you out of your head and anchor you safely back into the present moment, shifting your nervous system from panic to peace." },
-              { icon: "/Untitled design (61).svg", label: "Mood-Aware Responses", desc: "Adapts its tone to match your emotional state. It meets you where you are, not where it thinks you should be. By recognizing the subtle cues and emotional undertones in your messages, PeaceBot provides exactly the kind of response you need — whether that's gentle comfort, logical restructuring, or just a quiet, empathetic space to vent." },
+              { icon: "/icon-24-7-checkin.svg", label: "24/7 Emotional Check-ins", desc: "Structured support conversations available any hour, any day. Because difficult moments do not follow a schedule. Whether it's a sudden wave of panic at 3 AM or a subtle sense of unease before a morning class, PeaceBot is always awake and ready to listen without judgment. It offers a continuous presence that you can rely on whenever you need a safe space to unpack your thoughts." },
+              { icon: "/icon-exam-anxiety.svg", label: "Exam Anxiety Support", desc: "Calm guidance before, during, and after high-stakes assessments. It helps separate real concerns from anxiety spirals, allowing you to focus on your preparation rather than your fear. By offering tailored grounding techniques and realistic reassurance, it ensures that the pressure feels manageable, helping you approach your exams with a clear, steady mind." },
+              { icon: "/icon-grounding.svg", label: "Grounding Exercises", desc: "Quick mindfulness anchors when your thoughts spiral. Breathing cycles, body scans, and gentle recentering exercises — available instantly to help you regain control. These tools are meticulously designed to pull you out of your head and anchor you safely back into the present moment, shifting your nervous system from panic to peace." },
+              { icon: "/icon-mood-aware.svg", label: "Mood-Aware Responses", desc: "Adapts its tone to match your emotional state. It meets you where you are, not where it thinks you should be. By recognizing the subtle cues and emotional undertones in your messages, PeaceBot provides exactly the kind of response you need — whether that's gentle comfort, logical restructuring, or just a quiet, empathetic space to vent." },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -448,7 +462,7 @@ export default function PeaceBotRoute() {
                           <p className="font-serif text-[18px] text-[#0A2540] font-light leading-tight">Who are Peace Buddies?</p>
                         </div>
                         {/* Mini birds */}
-                        <img src="/Untitled design (68).svg" alt="" className="absolute bottom-3 right-4 w-6 opacity-40" style={{ transform: "scaleX(-1)" }} />
+                        <img src="/bg-decoration-2.svg" alt="" className="absolute bottom-3 right-4 w-6 opacity-40" style={{ transform: "scaleX(-1)" }} />
                       </div>
                       {/* Preview footer */}
                       <div className="bg-white px-5 py-3.5 flex items-center justify-between">
@@ -484,7 +498,7 @@ export default function PeaceBotRoute() {
                           <p className="font-serif text-[18px] text-[#0A2540] font-light leading-tight">Real support, without the wait.</p>
                         </div>
                         {/* Mini cloud */}
-                        <img src="/Untitled design (35).svg" alt="" className="absolute top-0 right-[-10px] w-16 opacity-30 mix-blend-multiply" />
+                        <img src="/cloud-bg-1.svg" alt="" className="absolute top-0 right-[-10px] w-16 opacity-30 mix-blend-multiply" />
                       </div>
                       {/* Preview footer */}
                       <div className="bg-white px-5 py-3.5 flex items-center justify-between">
@@ -526,7 +540,7 @@ export default function PeaceBotRoute() {
 
             {/* Tree illustration flipped horizontally via Framer Motion */}
             <motion.img
-              src="/Untitled design (63).svg"
+              src="/cloud-bg-4.svg"
               alt=""
               initial={{ opacity: 0, x: -30, scaleX: -1 }}
               whileInView={{ opacity: 1, x: 0, scaleX: -1 }}
@@ -609,7 +623,7 @@ export default function PeaceBotRoute() {
 
           {/* Ambient right edge cloud */}
           <motion.img
-            src="/Untitled design (35).svg"
+            src="/cloud-bg-1.svg"
             alt=""
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -735,7 +749,7 @@ export default function PeaceBotRoute() {
 
           {/* Ambient left cloud */}
           <motion.img
-            src="/Untitled design (41).svg"
+            src="/cloud-bg-2.svg"
             alt=""
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -795,7 +809,7 @@ export default function PeaceBotRoute() {
 
         {/* Edge Illustration */}
         <motion.img
-          src="/Untitled design (35).svg"
+          src="/cloud-bg-1.svg"
           alt=""
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -807,7 +821,7 @@ export default function PeaceBotRoute() {
 
         {/* Left Cloud */}
         <motion.img
-          src="/Untitled design (41).svg"
+          src="/cloud-bg-2.svg"
           alt=""
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}

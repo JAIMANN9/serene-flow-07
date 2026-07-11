@@ -4,6 +4,20 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { Nav, Footer } from "./index";
 
+/**
+ * GratitudeRoute Component
+ * 
+ * @description
+ * Renders the Gratitude Wall page.
+ * Users can post what they are thankful for, fostering a positive mindset.
+ * 
+ * @backend_integration
+ * - The gratitude "wall" currently displays static or mock notes.
+ * - Needs a backend API to `GET` real-time, moderated gratitude posts from the database.
+ * - Form submission must `POST` the user's note to the backend, ideally passing through a toxicity filter first.
+ * 
+ * @returns {JSX.Element} The rendered Gratitude Wall page.
+ */
 export default function GratitudeRoute() {
   const { scrollY } = useScroll();
 
@@ -36,7 +50,7 @@ export default function GratitudeRoute() {
         
         {/* Left Edge Image - Anchored to bottom */}
         <motion.img 
-          src="/Untitled design (42).svg" 
+          src="/journal-bg-1.svg" 
           alt="" 
           initial={{ x: "-100%", opacity: 0 }}
           animate={{ x: "-40%", opacity: 1 }}
@@ -47,7 +61,7 @@ export default function GratitudeRoute() {
 
         {/* Right Edge Image - Anchored to bottom */}
         <motion.img 
-          src="/Untitled design (63).svg" 
+          src="/cloud-bg-4.svg" 
           alt="" 
           initial={{ x: "100%", opacity: 0 }}
           animate={{ x: "40%", opacity: 1 }}
@@ -236,7 +250,7 @@ export default function GratitudeRoute() {
         <section className="relative py-20 md:py-48 flex flex-col items-center text-center">
           {/* Cloud Illustration */}
           <motion.img 
-            src="/Untitled design (41).svg" 
+            src="/cloud-bg-2.svg" 
             alt="" 
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -308,7 +322,7 @@ export default function GratitudeRoute() {
         <section className="relative py-20 md:py-48 flex flex-col items-center text-center mb-20">
           {/* Cloud Illustration */}
           <motion.img 
-            src="/Untitled design (35).svg" 
+            src="/cloud-bg-1.svg" 
             alt="" 
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}

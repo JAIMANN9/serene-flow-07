@@ -30,6 +30,20 @@ function HoverPhrase({ children }: { children: React.ReactNode }) {
   );
 }
 
+/**
+ * PsychologistRoute Component
+ * 
+ * @description
+ * Renders the Psychologist connection page where users can browse, filter, and connect with licensed therapists.
+ * Contains trust & safety sections, how it works, and an FAQ accordion.
+ * 
+ * @backend_integration
+ * - The "Book Session" and "Meet Our Psychologists" buttons should eventually route to a dynamic booking system.
+ * - Integrate with a scheduling API (e.g., Calendly, Cal.com) or custom backend booking service.
+ * - Psychologist profiles should be fetched from a headless CMS or database rather than being hardcoded.
+ * 
+ * @returns {JSX.Element} The rendered Psychologist page.
+ */
 export default function PsychologistRoute() {
   const { scrollY } = useScroll();
   const rightImgY = useTransform(scrollY, [0, 1000], [0, -120]);
@@ -74,7 +88,7 @@ export default function PsychologistRoute() {
 
       {/* Top Right Cloud */}
       <motion.img
-        src="/Untitled design (35).svg"
+        src="/cloud-bg-1.svg"
         alt=""
         initial={{ x: "20%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -85,7 +99,7 @@ export default function PsychologistRoute() {
 
       {/* Bottom Left Cloud */}
       <motion.img
-        src="/Untitled design (41).svg"
+        src="/cloud-bg-2.svg"
         alt=""
         initial={{ x: "-20%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -110,7 +124,7 @@ export default function PsychologistRoute() {
           style={{ bottom: "30%", right: "8%" }}
         >
           <img
-            src="/Untitled design (67).svg"
+            src="/bg-decoration-1.svg"
             alt=""
             className="w-[9vw] max-w-[120px] min-w-[60px] drop-shadow-md"
             style={{ transform: "scaleX(-1)" }}
@@ -125,7 +139,7 @@ export default function PsychologistRoute() {
           style={{ bottom: "20%", right: "15%" }}
         >
           <img
-            src="/Untitled design (68).svg"
+            src="/bg-decoration-2.svg"
             alt=""
             className="w-[7vw] max-w-[90px] min-w-[45px] drop-shadow-sm opacity-90"
             style={{ transform: "scaleX(-1)" }}
@@ -140,7 +154,7 @@ export default function PsychologistRoute() {
           style={{ bottom: "38%", right: "16%" }}
         >
           <img
-            src="/Untitled design (68).svg"
+            src="/bg-decoration-2.svg"
             alt=""
             className="w-[6vw] max-w-[80px] min-w-[40px] drop-shadow-sm opacity-85"
             style={{ transform: "scaleX(-1)" }}
@@ -155,7 +169,7 @@ export default function PsychologistRoute() {
           style={{ bottom: "12%", right: "22%" }}
         >
           <img
-            src="/Untitled design (67).svg"
+            src="/bg-decoration-1.svg"
             alt=""
             className="w-[5vw] max-w-[70px] min-w-[35px] drop-shadow-sm opacity-80"
             style={{ transform: "scaleX(-1)" }}
@@ -170,7 +184,7 @@ export default function PsychologistRoute() {
           style={{ bottom: "44%", right: "24%" }}
         >
           <img
-            src="/Untitled design (67).svg"
+            src="/bg-decoration-1.svg"
             alt=""
             className="w-[5.5vw] max-w-[75px] min-w-[35px] drop-shadow-sm opacity-75"
             style={{ transform: "scaleX(-1)" }}
@@ -185,7 +199,7 @@ export default function PsychologistRoute() {
           style={{ bottom: "28%", right: "26%" }}
         >
           <img
-            src="/Untitled design (68).svg"
+            src="/bg-decoration-2.svg"
             alt=""
             className="w-[4vw] max-w-[60px] min-w-[30px] drop-shadow-sm opacity-70"
             style={{ transform: "scaleX(-1)" }}
@@ -446,7 +460,7 @@ export default function PsychologistRoute() {
             className="md:w-5/12 relative flex justify-center items-center"
           >
             <img
-              src="/Untitled design (51).svg"
+              src="/finding-calm.svg"
               alt="Finding calm through support"
               className="w-full h-auto max-w-[420px] z-10 mix-blend-multiply opacity-85 rounded-3xl"
             />
@@ -513,7 +527,7 @@ export default function PsychologistRoute() {
             className="md:w-5/12 relative flex justify-center items-center"
           >
             <img
-              src="/Untitled design (54).svg"
+              src="/mobile-consultation-alt.svg"
               alt="Mobile psychologist consultation"
               className="w-full h-auto max-w-[450px] z-10 mix-blend-multiply opacity-90 rounded-3xl"
             />
@@ -569,7 +583,7 @@ export default function PsychologistRoute() {
 
           {/* Ambient Cloud */}
           <motion.img
-            src="/Untitled design (37).svg"
+            src="/cloud-bg-3.svg"
             alt=""
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -647,7 +661,7 @@ export default function PsychologistRoute() {
             className="md:w-5/12 relative flex justify-center items-center"
           >
             <img
-              src="/Untitled design (50).svg"
+              src="/trust-safety-alt.svg"
               alt="Trust and safety"
               className="w-full h-auto max-w-[420px] z-10 mix-blend-multiply opacity-85 rounded-3xl"
             />
@@ -680,7 +694,7 @@ export default function PsychologistRoute() {
 
         {/* Edge Illustration */}
         <motion.img
-          src="/Untitled design (35).svg"
+          src="/cloud-bg-1.svg"
           alt=""
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -692,7 +706,7 @@ export default function PsychologistRoute() {
 
         {/* Left Cloud */}
         <motion.img
-          src="/Untitled design (41).svg"
+          src="/cloud-bg-2.svg"
           alt=""
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}

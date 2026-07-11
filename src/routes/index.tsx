@@ -45,9 +45,9 @@ const craneAccent1 = "/assets/crane-accent-1.png";
 const craneAccent2 = "/assets/crane-accent-2.png";
 
 /* ───────── AVIF Cloud / Blob illustrations from /public ───────── */
-const avifCloud1 = "/Untitled design (64).svg";
-const avifCloud2 = "/Untitled design (63).svg";
-const avifCloud3 = "/Untitled design (42).svg";
+const avifCloud1 = "/cloud-bg-5.svg";
+const avifCloud2 = "/cloud-bg-4.svg";
+const avifCloud3 = "/journal-bg-1.svg";
 
 /**
  * Edge-bleed parallax illustration using the AVIF files.
@@ -645,6 +645,20 @@ function MobileNavItem({ item, setOpen }: { item: NavDropdownData, setOpen: (v: 
   );
 }
 
+/**
+ * Nav Component
+ * 
+ * @description
+ * Shared navigation bar used across all route components.
+ * Includes a responsive mobile menu, emergency/SOS quick links, and user authentication state UI.
+ * 
+ * @backend_integration
+ * - Currently relies on static "Login/Sign Up" buttons.
+ * - Should integrate with NextAuth.js or a custom auth provider to check active sessions.
+ * - Profile avatar and user data should be fetched from the backend when authenticated.
+ * 
+ * @returns {JSX.Element} The rendered Navigation bar.
+ */
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [scrollPos, setScrollPos] = useState(false);
@@ -761,7 +775,7 @@ function Hero({ isBgLoaded = true }: { isBgLoaded?: boolean }) {
           style={{ top: "-2%", right: "15%" }}
         >
           <img
-            src="/Untitled design (68).svg"
+            src="/bg-decoration-2.svg"
             alt=""
             fetchPriority="high"
             decoding="sync"
@@ -780,7 +794,7 @@ function Hero({ isBgLoaded = true }: { isBgLoaded?: boolean }) {
           style={{ top: "25%", right: "4%" }}
         >
           <img
-            src="/Untitled design (68).svg"
+            src="/bg-decoration-2.svg"
             alt=""
             fetchPriority="high"
             decoding="sync"
@@ -799,7 +813,7 @@ function Hero({ isBgLoaded = true }: { isBgLoaded?: boolean }) {
           style={{ top: "58%", right: "12%" }}
         >
           <img
-            src="/Untitled design (68).svg"
+            src="/bg-decoration-2.svg"
             alt=""
             fetchPriority="high"
             decoding="sync"
@@ -818,7 +832,7 @@ function Hero({ isBgLoaded = true }: { isBgLoaded?: boolean }) {
           style={{ top: "70%", right: "32%" }}
         >
           <img
-            src="/Untitled design (67).svg"
+            src="/bg-decoration-1.svg"
             alt=""
             fetchPriority="high"
             decoding="sync"
@@ -837,7 +851,7 @@ function Hero({ isBgLoaded = true }: { isBgLoaded?: boolean }) {
           style={{ top: "75%", left: "12%" }}
         >
           <img
-            src="/Untitled design (68).svg"
+            src="/bg-decoration-2.svg"
             alt=""
             fetchPriority="high"
             decoding="sync"
@@ -953,7 +967,7 @@ function Collaboration() {
         }}
       >
         <img
-          src="/Untitled design (64).svg"
+          src="/cloud-bg-5.svg"
           alt=""
           className="w-full h-auto object-cover"
         />
@@ -1371,7 +1385,7 @@ function MindAccordion() {
         }}
       >
         <img
-          src="/Untitled design (41).svg"
+          src="/cloud-bg-2.svg"
           alt=""
           className="w-full h-auto object-contain"
           loading="lazy"
@@ -1457,7 +1471,7 @@ function FeatureHighlight() {
       {/* Left Bleed Illustration (SVG) */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none select-none z-10 hidden xl:block w-[30vw] max-w-[420px] mix-blend-multiply opacity-90">
         <img
-          src="/Untitled design (40).svg"
+          src="/journal-illustration-1.svg"
           alt=""
           className="w-full h-auto object-contain object-left scale-[1.35] origin-left"
         />
@@ -1466,7 +1480,7 @@ function FeatureHighlight() {
       {/* Right Bleed Illustration (AVIF) */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none z-10 hidden xl:block w-[30vw] max-w-[420px] opacity-90">
         <img
-          src="/Untitled design (70).svg"
+          src="/journal-illustration-2.svg"
           alt=""
           className="w-full h-auto object-contain object-right scale-[1.25] origin-right"
           style={{ transform: "rotate(-90deg)" }}
@@ -1536,19 +1550,19 @@ function FeatureHighlight() {
 function Ecosystem() {
   const items = [
     {
-      img: "/Untitled design (32).svg",
+      img: "/peer-support-icon.svg",
       title: "Anonymous peer support",
       text: "Step into rooms with students who understand 3 a.m. labs, group-project dread, and the silence after a bad grade.",
       href: "/peace-buddies"
     },
     {
-      img: "/Untitled design (31).svg",
+      img: "/comm-coaching-icon.svg",
       title: "Communication coaching",
       text: "Practice the hard conversations — with a professor, a roommate, a parent — through gentle, evidence-based prompts.",
       href: "/peacebot"
     },
     {
-      img: "/Untitled design (33).svg",
+      img: "/therapists-icon.svg",
       title: "Licensed therapists",
       text: "When you want more than a chat, our vetted therapists and clinical guides are one tap away. No paperwork.",
       href: "/psychologist"
@@ -1667,7 +1681,7 @@ function WhatStudentsCarry() {
         transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
       >
         <img
-          src="/Untitled design (37).svg"
+          src="/cloud-bg-3.svg"
           alt=""
           className="w-full h-auto"
           style={{ transform: "scaleX(-1)" }}
@@ -1943,7 +1957,7 @@ function ClosingCTA() {
       }}
     >
       <AvifBleed
-        src="/Untitled design (63).svg"
+        src="/cloud-bg-4.svg"
         side="left"
         top="-10%"
         width="36vw"
@@ -2157,6 +2171,15 @@ function BentoFeatures() {
 
 /* ───────── FOOTER (sage, with campus illustration anchor) ───────── */
 
+/**
+ * Footer Component
+ * 
+ * @description
+ * Shared global footer.
+ * Contains vital links, emergency resources, app download CTAs, and legal links.
+ * 
+ * @returns {JSX.Element} The rendered Footer.
+ */
 export function Footer() {
   const columns: { h: string; links: { label: string; href: string }[] }[] = [
     {
@@ -2566,6 +2589,20 @@ function useDecorScroll() {
   }, []);
 }
 
+/**
+ * Index Component (Landing Page)
+ * 
+ * @description
+ * Renders the main marketing landing page for Peacecode.
+ * Combines heavy visual animations, feature highlights, user testimonials, and high-conversion CTAs.
+ * 
+ * @backend_integration
+ * - Waitlist form should POST emails to a backend marketing service (e.g., Mailchimp, Resend).
+ * - "Total active users" stats could be fetched via API rather than hardcoded.
+ * - Could implement A/B testing backend hooks for the hero headline.
+ * 
+ * @returns {JSX.Element} The rendered Landing page.
+ */
 export default function Index() {
   useDecorScroll();
 
@@ -2634,7 +2671,7 @@ export default function Index() {
         }}
       >
         <img
-          src="/Untitled design (21).svg"
+          src="/landing-illustration-1.svg"
           alt=""
           className="w-full h-auto opacity-85"
           style={{ transform: "scaleX(-1)" }}
@@ -2667,7 +2704,7 @@ export default function Index() {
               }}
             >
               <img
-                src="/Untitled design (39).svg"
+                src="/landing-illustration-2.svg"
                 alt=""
                 className="w-full h-auto"
                 style={{
@@ -2715,7 +2752,7 @@ export default function Index() {
           {/* Clip wrapper hides the bottom branch endings */}
           <div style={{ overflow: "hidden", paddingBottom: 0 }}>
             <img
-              src="/Untitled design (63).svg"
+              src="/cloud-bg-4.svg"
               alt=""
               className="w-full h-auto object-contain object-top"
               style={{
@@ -2778,7 +2815,7 @@ export default function Index() {
           }}
         >
           <img
-            src="/Untitled design (69).svg"
+            src="/landing-illustration-3.svg"
             alt=""
             className="w-full h-auto object-contain"
             loading="lazy"

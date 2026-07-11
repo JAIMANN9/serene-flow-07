@@ -4,6 +4,20 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Nav, Footer } from "./index";
 
+/**
+ * FocusRoute Component
+ * 
+ * @description
+ * Renders the focus timer and productivity page (Pomodoro style).
+ * Helps users study and work with intentional breaks to reduce anxiety.
+ * 
+ * @backend_integration
+ * - Currently relies on local/client-side state for the timer.
+ * - Needs backend integration to persist session history (e.g., total focus time this week).
+ * - Could integrate with a leaderboard or friends API to show "Friends currently focusing".
+ * 
+ * @returns {JSX.Element} The rendered Focus page.
+ */
 export default function FocusRoute() {
   const { scrollY } = useScroll();
   const yParallaxSlow = useTransform(scrollY, [0, 1000], [0, -150]);
@@ -36,21 +50,21 @@ export default function FocusRoute() {
       {/* Flock of Birds in Hero */}
       <div className="absolute inset-0 pointer-events-none z-[0] overflow-hidden">
         <motion.img 
-          src="/Untitled design (67).svg" 
+          src="/bg-decoration-1.svg" 
           alt="" 
           animate={{ x: ['-10vw', '110vw'], y: [100, -50] }}
           transition={{ repeat: Infinity, duration: 30, ease: "linear", delay: 0 }}
           className="absolute top-[20vh] left-0 w-16 opacity-80"
         />
         <motion.img 
-          src="/Untitled design (68).svg" 
+          src="/bg-decoration-2.svg" 
           alt="" 
           animate={{ x: ['-10vw', '110vw'], y: [120, -30] }}
           transition={{ repeat: Infinity, duration: 30, ease: "linear", delay: 2.5 }}
           className="absolute top-[18vh] left-0 w-12 opacity-80"
         />
         <motion.img 
-          src="/Untitled design (67).svg" 
+          src="/bg-decoration-1.svg" 
           alt="" 
           animate={{ x: ['-10vw', '110vw'], y: [80, -70] }}
           transition={{ repeat: Infinity, duration: 30, ease: "linear", delay: 4.5 }}
@@ -91,7 +105,7 @@ export default function FocusRoute() {
         {/* 2. WHY FOCUS FEELS HARD (Emotional Validation) */}
         <section className="relative py-20 md:py-48 flex flex-col items-center text-center">
           <motion.img 
-            src="/Untitled design (37).svg" 
+            src="/cloud-bg-3.svg" 
             alt="" 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -110,7 +124,7 @@ export default function FocusRoute() {
         {/* 3. THE RITUAL (Features) */}
         <section className="relative py-20 md:py-48 flex flex-col md:flex-row justify-between gap-16">
           <motion.img 
-            src="/Untitled design (19).svg" 
+            src="/focus-illustration-1.svg" 
             alt="" 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -174,7 +188,7 @@ export default function FocusRoute() {
         <section className="relative py-20 md:py-48 flex flex-col md:flex-row items-center justify-end">
           
           <motion.img 
-            src="/Untitled design (63).svg" 
+            src="/cloud-bg-4.svg" 
             alt="" 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 0.6, x: 0 }}
@@ -218,7 +232,7 @@ export default function FocusRoute() {
         {/* 7. FINAL CTA */}
         <section className="relative py-20 md:py-48 flex flex-col items-center text-center mb-20">
           <motion.img 
-            src="/Untitled design (35).svg" 
+            src="/cloud-bg-1.svg" 
             alt="" 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}

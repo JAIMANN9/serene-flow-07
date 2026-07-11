@@ -4,6 +4,19 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Search, Clock, Bot, CalendarCheck, MapPin, ArrowRight } from "lucide-react";
 import { Nav, Footer } from "./index";
 
+/**
+ * AnnouncementsRoute Component
+ * 
+ * @description
+ * Renders the Announcements page, displaying featured news and upcoming events.
+ * 
+ * @backend_integration
+ * - Data arrays (`featuredNews`, `eventsData`) are hardcoded.
+ * - Backend should provide event data dynamically, potentially syncing with Google Calendar or an internal events database.
+ * - Registration forms for events should submit user data to a backend handler.
+ * 
+ * @returns {JSX.Element} The rendered Announcements page.
+ */
 export default function AnnouncementsRoute() {
   const { scrollY } = useScroll();
   
@@ -94,7 +107,7 @@ export default function AnnouncementsRoute() {
 
       {/* Cloud Illustration (Right Edge) */}
       <motion.img 
-        src="/Untitled design (35).svg" 
+        src="/cloud-bg-1.svg" 
         alt="" 
         initial={{ x: "100%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -124,8 +137,8 @@ export default function AnnouncementsRoute() {
             style={{ y: birdsY }} 
             className="flex justify-center items-center gap-32 mb-10 pointer-events-none mix-blend-multiply"
           >
-            <img src="/Untitled design (67).svg" alt="" className="w-[220px] object-contain translate-y-6" />
-            <img src="/Untitled design (67).svg" alt="" className="w-[180px] object-contain -translate-y-4" />
+            <img src="/bg-decoration-1.svg" alt="" className="w-[220px] object-contain translate-y-6" />
+            <img src="/bg-decoration-1.svg" alt="" className="w-[180px] object-contain -translate-y-4" />
           </motion.div>
 
           {/* Search Bar */}
@@ -192,7 +205,7 @@ export default function AnnouncementsRoute() {
           <div className="text-left mb-16 relative">
             {/* Branch Illustration (Behind Liquid Glass) */}
             <motion.img 
-              src="/Untitled design (37).svg" 
+              src="/cloud-bg-3.svg" 
               alt="" 
               initial={{ x: "-60%", opacity: 0 }}
               whileInView={{ x: "-20%", opacity: 1 }}

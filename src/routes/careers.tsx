@@ -4,6 +4,19 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, CheckCircle2, CloudUpload, Sparkles, HeartHandshake, Brain, Terminal } from "lucide-react";
 import { Nav, Footer } from "./index";
 
+/**
+ * CareersRoute Component
+ * 
+ * @description
+ * Renders the Careers page, showing open positions, company values, and benefits.
+ * 
+ * @backend_integration
+ * - Job listings are currently static arrays (`roles`).
+ * - Need an API endpoint (e.g., `GET /api/careers`) to dynamically display jobs from an ATS (Applicant Tracking System) like Lever or Greenhouse.
+ * - Resume upload forms will require multipart/form-data support on the backend.
+ * 
+ * @returns {JSX.Element} The rendered Careers page.
+ */
 export default function CareersRoute() {
   const { scrollY } = useScroll();
   
@@ -61,7 +74,7 @@ export default function CareersRoute() {
         
         {/* Left Edge Image - Anchored to bottom */}
         <motion.img 
-          src="/Untitled design (42).svg" 
+          src="/journal-bg-1.svg" 
           alt="" 
           initial={{ x: "-100%", opacity: 0 }}
           animate={{ x: "-40%", opacity: 1 }}
@@ -72,7 +85,7 @@ export default function CareersRoute() {
 
         {/* Right Edge Image - Anchored to bottom */}
         <motion.img 
-          src="/Untitled design (63).svg" 
+          src="/cloud-bg-4.svg" 
           alt="" 
           initial={{ x: "100%", opacity: 0 }}
           animate={{ x: "40%", opacity: 1 }}

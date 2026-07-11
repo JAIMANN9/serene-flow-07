@@ -4,6 +4,18 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Mail, MapPin, PhoneCall, Sparkles } from "lucide-react";
 import { Nav, Footer } from "./index";
 
+/**
+ * ContactRoute Component
+ * 
+ * @description
+ * Renders the Contact Us page, displaying support emails, locations, and social links.
+ * 
+ * @backend_integration
+ * - Currently relies on `mailto:` links for contact.
+ * - Could be enhanced with a native contact form that POSTs to a backend endpoint (e.g. Node/Express using Nodemailer or SendGrid).
+ * 
+ * @returns {JSX.Element} The rendered Contact page.
+ */
 export default function ContactRoute() {
   const reveal = {
     initial: { opacity: 0, y: 30 },
@@ -21,7 +33,7 @@ export default function ContactRoute() {
       
       {/* Rotated Edge Image */}
       <img 
-        src="/Untitled design (71).svg" 
+        src="/screening-bg.svg" 
         alt=""
         className="absolute left-[-10vw] md:left-[-15vw] lg:left-[-20vw] top-[50%] w-[40vw] max-w-[600px] object-contain rotate-90 pointer-events-none opacity-90 mix-blend-multiply z-0"
       />
@@ -36,7 +48,7 @@ export default function ContactRoute() {
 
       {/* Cloud Illustration */}
       <motion.img 
-        src="/Untitled design (41).svg" 
+        src="/cloud-bg-2.svg" 
         alt="" 
         initial={{ x: "-100%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -66,8 +78,8 @@ export default function ContactRoute() {
 
           {/* Birds placed in the gap for breathing room */}
           <motion.div style={{ y: birdsY }} className="w-full h-[160px] md:h-[220px] flex justify-center items-center gap-16 md:gap-32 pointer-events-none opacity-[0.9] mix-blend-multiply z-0 mb-16 md:mb-24">
-            <img src="/Untitled design (67).svg" alt="" className="w-[160px] md:w-[220px] object-contain translate-y-6" />
-            <img src="/Untitled design (68).svg" alt="" className="w-[130px] md:w-[180px] object-contain -translate-y-4" />
+            <img src="/bg-decoration-1.svg" alt="" className="w-[160px] md:w-[220px] object-contain translate-y-6" />
+            <img src="/bg-decoration-2.svg" alt="" className="w-[130px] md:w-[180px] object-contain -translate-y-4" />
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 text-left">

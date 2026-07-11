@@ -115,6 +115,18 @@ function FaqItem({ item, isOpen, onClick }: { item: any, isOpen: boolean, onClic
   );
 }
 
+/**
+ * FAQRoute Component
+ * 
+ * @description
+ * Renders the Frequently Asked Questions page with a searchable, categorized accordion UI.
+ * 
+ * @backend_integration
+ * - FAQs are currently hardcoded in `faqsData`.
+ * - For easier content management, FAQ data should be fetched from a headless CMS (like Sanity, Contentful) or a backend database.
+ * 
+ * @returns {JSX.Element} The rendered FAQ page.
+ */
 export default function FaqRoute() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
@@ -142,7 +154,7 @@ export default function FaqRoute() {
 
       {/* First Illustration - Top Right Edge */}
       <motion.img 
-        src="/Untitled design (63).svg" 
+        src="/cloud-bg-4.svg" 
         alt=""
         style={{ y: illustration1Y }}
         className="absolute right-[-10vw] top-[5%] w-[40vw] max-w-[600px] object-contain pointer-events-none opacity-[0.85] mix-blend-multiply z-0"
@@ -166,7 +178,7 @@ export default function FaqRoute() {
 
         {/* Second Illustration - Middle Left */}
         <motion.img 
-          src="/Untitled design (63).svg" 
+          src="/cloud-bg-4.svg" 
           alt=""
           style={{ y: illustration2Y }}
           className="absolute left-[-15vw] md:left-[-10vw] top-[30%] w-[35vw] max-w-[500px] object-contain pointer-events-none opacity-[0.85] mix-blend-multiply z-0"

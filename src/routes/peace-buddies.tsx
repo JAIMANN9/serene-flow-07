@@ -4,6 +4,20 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Sparkles, ArrowDown } from "lucide-react";
 import { Nav, Footer } from "./index";
 
+/**
+ * PeaceBuddiesRoute Component
+ * 
+ * @description
+ * Renders the Peace Buddies page, an anonymous peer support community feature.
+ * Highlights the benefits of peer support, guidelines, and a call-to-action to join the waitlist/community.
+ * 
+ * @backend_integration
+ * - The "Join Waitlist" or "Enter Community" CTA buttons currently link to static forms/routes.
+ * - Backend should integrate a real-time matching algorithm to pair users based on shared interests or struggles.
+ * - Websocket integration will be needed for the live anonymous chat rooms.
+ * 
+ * @returns {JSX.Element} The rendered Peace Buddies page.
+ */
 export default function PeaceBuddiesRoute() {
   const { scrollY } = useScroll();
 
@@ -36,7 +50,7 @@ export default function PeaceBuddiesRoute() {
         
         {/* Top Right Cloud */}
         <motion.img 
-          src="/Untitled design (35).svg" 
+          src="/cloud-bg-1.svg" 
           alt="" 
           initial={{ x: "20%", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -47,7 +61,7 @@ export default function PeaceBuddiesRoute() {
 
         {/* Bottom Left Cloud */}
         <motion.img 
-          src="/Untitled design (41).svg" 
+          src="/cloud-bg-2.svg" 
           alt="" 
           initial={{ x: "-20%", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -65,7 +79,7 @@ export default function PeaceBuddiesRoute() {
           style={{ bottom: "12%", right: "8%" }}
         >
           <img
-            src="/Untitled design (67).svg"
+            src="/bg-decoration-1.svg"
             alt=""
             className="w-[12vw] max-w-[160px] min-w-[70px] drop-shadow-md"
             style={{ transform: "scaleX(-1)" }}
@@ -80,7 +94,7 @@ export default function PeaceBuddiesRoute() {
           style={{ bottom: "5%", right: "16%" }}
         >
           <img
-            src="/Untitled design (68).svg"
+            src="/bg-decoration-2.svg"
             alt=""
             className="w-[8vw] max-w-[100px] min-w-[50px] drop-shadow-sm opacity-90"
             style={{ transform: "scaleX(-1)" }}
@@ -95,7 +109,7 @@ export default function PeaceBuddiesRoute() {
           style={{ bottom: "18%", right: "20%" }}
         >
           <img
-            src="/Untitled design (68).svg"
+            src="/bg-decoration-2.svg"
             alt=""
             className="w-[6vw] max-w-[80px] min-w-[40px] drop-shadow-sm opacity-80"
             style={{ transform: "scaleX(-1)" }}
@@ -227,7 +241,7 @@ export default function PeaceBuddiesRoute() {
           >
             {/* Ambient Illustration */}
             <img 
-              src="/Untitled design (48).svg" 
+              src="/soft-cloud-ambient.svg" 
               alt="Soft cloud ambient shape" 
               className="w-full h-auto max-w-[550px] z-10 mix-blend-multiply opacity-80"
             />
@@ -298,7 +312,7 @@ export default function PeaceBuddiesRoute() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            src="/Untitled design (47).svg" 
+            src="/ambient-divider.svg" 
             alt="Ambient divider" 
             className="w-full max-w-[800px] h-auto object-contain mix-blend-multiply opacity-90"
           />
@@ -313,7 +327,7 @@ export default function PeaceBuddiesRoute() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            src="/Untitled design (37).svg" 
+            src="/cloud-bg-3.svg" 
             alt="Ambient cloud" 
             className="absolute top-[10%] left-[-20%] md:left-[-10%] w-[50vw] max-w-[500px] pointer-events-none z-0 mix-blend-multiply opacity-80"
           />
@@ -471,7 +485,7 @@ export default function PeaceBuddiesRoute() {
         {/* 8. FINAL CTA */}
         <section className="relative py-20 md:py-48 flex flex-col items-center text-center mb-20">
           <motion.img 
-            src="/Untitled design (35).svg" 
+            src="/cloud-bg-1.svg" 
             alt="" 
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}

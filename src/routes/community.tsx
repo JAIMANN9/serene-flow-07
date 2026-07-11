@@ -4,6 +4,20 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { Nav, Footer } from "./index";
 
+/**
+ * CommunityRoute Component
+ * 
+ * @description
+ * Renders the Community landing page, explaining the broader student-focused mental wellness community.
+ * Focuses on safe spaces, shared experiences, and community guidelines.
+ * 
+ * @backend_integration
+ * - Currently relies on static content blocks.
+ * - Backend integration should include fetching active community members, recent generic topics, or live engagement stats.
+ * - Will require integration with moderation APIs (e.g., toxicity filters) for user-generated content.
+ * 
+ * @returns {JSX.Element} The rendered Community page.
+ */
 export default function CommunityRoute() {
   const { scrollY } = useScroll();
 
@@ -42,7 +56,7 @@ export default function CommunityRoute() {
         
         {/* Left Edge Image - Anchored to bottom */}
         <motion.img 
-          src="/Untitled design (42).svg" 
+          src="/journal-bg-1.svg" 
           alt="" 
           initial={{ x: "-100%", opacity: 0 }}
           animate={{ x: "-40%", opacity: 1 }}
@@ -53,7 +67,7 @@ export default function CommunityRoute() {
 
         {/* Right Edge Image - Anchored to bottom */}
         <motion.img 
-          src="/Untitled design (63).svg" 
+          src="/cloud-bg-4.svg" 
           alt="" 
           initial={{ x: "100%", opacity: 0 }}
           animate={{ x: "40%", opacity: 1 }}
@@ -114,7 +128,7 @@ export default function CommunityRoute() {
           >
             {/* Placeholder for editorial illustration of students, connection, shared notes */}
             <img 
-              src="/Untitled design (43).svg" 
+              src="/unassigned-asset-5.svg" 
               alt="Community Connection" 
               className="w-full h-auto max-w-[400px] z-10 drop-shadow-sm"
             />
@@ -185,7 +199,7 @@ export default function CommunityRoute() {
             className="w-full md:w-5/12 flex justify-center items-center"
           >
             <img 
-              src="/Untitled design (44).svg" 
+              src="/unassigned-asset-6.svg" 
               alt="Community Growth" 
               className="w-full h-auto max-w-[450px] pointer-events-none opacity-90 mix-blend-multiply"
             />
@@ -219,7 +233,7 @@ export default function CommunityRoute() {
             className="relative w-full max-w-6xl flex justify-center items-center"
           >
             <img 
-              src="/Untitled design (13).png" 
+              src="/unassigned-asset-1.png" 
               alt="Featured Conversations" 
               className="w-full h-auto max-h-[700px] object-cover opacity-90 mix-blend-multiply"
               style={{
@@ -298,7 +312,7 @@ export default function CommunityRoute() {
         {/* FINAL CTA */}
         <section className="relative py-20 md:py-48 flex flex-col items-center text-center mb-20">
           <motion.img 
-            src="/Untitled design (35).svg" 
+            src="/cloud-bg-1.svg" 
             alt="" 
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}

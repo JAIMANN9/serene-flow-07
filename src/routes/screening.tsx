@@ -4,6 +4,20 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Sparkles, ClipboardCheck, ArrowRight, ShieldCheck, Heart } from "lucide-react";
 import { Nav, Footer } from "./index";
 
+/**
+ * ScreeningRoute Component
+ * 
+ * @description
+ * Renders the clinical mental health screening page.
+ * Guides the user through a clinically validated questionnaire (e.g. PHQ-9, GAD-7) to assess anxiety/depression levels.
+ * 
+ * @backend_integration
+ * - The questionnaire relies on client-side state transitions.
+ * - Final scores MUST be computed and stored securely on the backend.
+ * - The resulting "Peace Score" should trigger backend logic to recommend tailored resources or alert professionals if the risk is high.
+ * 
+ * @returns {JSX.Element} The rendered Screening page.
+ */
 export default function ScreeningRoute() {
   const { scrollY } = useScroll();
 
@@ -29,7 +43,7 @@ export default function ScreeningRoute() {
     <main className="relative min-h-screen w-full overflow-x-hidden bg-[#f7f3ea] text-[#1C1917] font-sans selection:bg-[#E7E5E4] selection:text-[#1C1917]">
       {/* Rotated Edge Image */}
       <img 
-        src="/Untitled design (71).svg" 
+        src="/screening-bg.svg" 
         alt=""
         className="absolute left-[-10vw] md:left-[-15vw] lg:left-[-20vw] top-[50%] w-[40vw] max-w-[600px] object-contain rotate-90 pointer-events-none opacity-90 mix-blend-multiply z-0"
       />
@@ -44,7 +58,7 @@ export default function ScreeningRoute() {
 
       {/* Cloud Illustration */}
       <motion.img 
-        src="/Untitled design (41).svg" 
+        src="/cloud-bg-2.svg" 
         alt="" 
         initial={{ x: "-100%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -75,8 +89,8 @@ export default function ScreeningRoute() {
           
           {/* Birds placed in the gap for breathing room */}
           <motion.div style={{ y: rightImgY }} className="w-full h-[160px] md:h-[220px] flex justify-center items-center gap-16 md:gap-32 pointer-events-none opacity-[0.9] mix-blend-multiply z-0 mb-16 md:mb-24">
-            <img src="/Untitled design (67).svg" alt="" className="w-[160px] md:w-[220px] object-contain translate-y-6" />
-            <img src="/Untitled design (68).svg" alt="" className="w-[130px] md:w-[180px] object-contain -translate-y-4" />
+            <img src="/bg-decoration-1.svg" alt="" className="w-[160px] md:w-[220px] object-contain translate-y-6" />
+            <img src="/bg-decoration-2.svg" alt="" className="w-[130px] md:w-[180px] object-contain -translate-y-4" />
           </motion.div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -251,7 +265,7 @@ export default function ScreeningRoute() {
               className="md:w-5/12 flex justify-center items-center"
             >
               <img 
-                src="/Untitled design (46).svg" 
+                src="/peace-score-abstract.svg" 
                 alt="Peace Score abstract" 
                 className="w-full h-auto max-w-[400px] drop-shadow-sm"
               />
@@ -323,7 +337,7 @@ export default function ScreeningRoute() {
           
           {/* Floating Illustration */}
           <motion.img 
-            src="/Untitled design (37).svg"
+            src="/cloud-bg-3.svg"
             alt="Abstract layers illustration"
             className="absolute left-[-15vw] md:left-[-20vw] lg:left-[-15vw] top-[-5%] md:top-[-10%] w-[45vw] md:w-[35vw] max-w-[450px] pointer-events-none z-0"
             initial={{ opacity: 0, x: -50 }}
@@ -403,7 +417,7 @@ export default function ScreeningRoute() {
           
           {/* Huge Edge Image on the right */}
           <motion.img 
-            src="/Untitled design (63).svg" 
+            src="/cloud-bg-4.svg" 
             alt="Cloud abstract" 
             className="absolute right-[-20vw] md:right-[-30vw] lg:right-[-25vw] top-[60%] -translate-y-1/2 w-[80vw] md:w-[70vw] max-w-[1200px] pointer-events-none z-0 object-contain mix-blend-multiply opacity-70"
             initial={{ opacity: 0 }}

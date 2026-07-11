@@ -12,7 +12,7 @@ export const blogPosts: BlogPost[] = [
     slug: "romanticizing-the-grind-hustle-culture",
     tag: "Academic Burnout",
     title: "Romanticizing the Grind: Why Hustle Culture is Destroying Our Mental Health",
-    img: "/Untitled design (42).svg", 
+    img: "/journal-bg-1.svg", 
     summary: "From 5 AM study vlogs to 'all-nighter' aesthetic posts, hustle culture has convinced us that exhaustion equals success. Here's why breaking up with the grind is the most productive thing you can do.",
     content: `
       <h2>The Aesthetic of Exhaustion</h2>
@@ -42,7 +42,7 @@ export const blogPosts: BlogPost[] = [
     slug: "ghosting-situationships-anxiety",
     tag: "Relationships",
     title: "Ghosting, Situationships, and Anxiety: Navigating Modern Dating in College",
-    img: "/Untitled design (63).svg",
+    img: "/cloud-bg-4.svg",
     summary: "Modern dating terminology is expanding, but so is our anxiety. How undefined relationships and digital-first communication are taking a toll on college students' mental well-being.",
     content: `
       <h2>The Era of the Undefined</h2>
@@ -175,7 +175,7 @@ export const blogPosts: BlogPost[] = [
     slug: "therapy-speak-tiktok-vs-reality",
     tag: "Therapy",
     title: "Therapy Speak on TikTok vs. Real Life: What You Actually Need to Know",
-    img: "/Untitled design (41).svg",
+    img: "/cloud-bg-2.svg",
     summary: "From 'gaslighting' to 'narcissist' to 'toxic,' therapy vocabulary has taken over our feeds. But is the internet's obsession with pathologizing everything actually helping our mental health?",
     content: `
       <h2>The Rise of 'Therapy Speak'</h2>
@@ -212,7 +212,7 @@ export const blogPosts: BlogPost[] = [
     slug: "financial-anxiety-college-survival",
     tag: "Money & Healthcare",
     title: "Financial Anxiety is Mental Health: Surviving College on a Micro-Budget",
-    img: "/Untitled design (42).svg",
+    img: "/journal-bg-1.svg",
     summary: "We often treat mental health and financial health as two separate issues. For college students facing rising costs and low wages, they are exactly the same thing. Let's break the taboo.",
     content: `
       <h2>The Elephant in the Dorm Room</h2>
@@ -249,7 +249,7 @@ export const blogPosts: BlogPost[] = [
     slug: "loneliness-epidemic-on-campus",
     tag: "Community",
     title: "The Loneliness Epidemic on Campus: Finding Your People IRL",
-    img: "/Untitled design (63).svg",
+    img: "/cloud-bg-4.svg",
     summary: "Despite being surrounded by thousands of peers and constantly connected online, this generation of students is the loneliest on record. How do we build genuine community offline?",
     content: `
       <h2>Crowded But Isolated</h2>

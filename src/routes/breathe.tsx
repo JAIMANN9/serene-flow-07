@@ -3,6 +3,20 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Nav, Footer } from "./index";
 
+/**
+ * BreatheRoute Component
+ * 
+ * @description
+ * Renders the guided breathing exercises page.
+ * Includes interactive breathing animations to help users calm their nervous system.
+ * 
+ * @backend_integration
+ * - The timer and breathing progress are currently client-side only.
+ * - To track user wellness journeys, integrate backend events to log completed breathing sessions.
+ * - User preferences (e.g. preferred breathing cycle: 4-7-8 vs box breathing) can be saved to a user profile database.
+ * 
+ * @returns {JSX.Element} The rendered Breathe page.
+ */
 export default function BreatheRoute() {
   const { scrollY } = useScroll();
   const yParallaxSlow = useTransform(scrollY, [0, 2000], [0, -100]);
@@ -35,7 +49,7 @@ export default function BreatheRoute() {
 
       {/* Atmospheric Illustration: Soft, airy abstraction placed elegantly in the background */}
       <motion.img 
-        src="/Untitled design (64).svg" 
+        src="/cloud-bg-5.svg" 
         alt="" 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -47,28 +61,28 @@ export default function BreatheRoute() {
       {/* Flock of Birds in Hero */}
       <div className="absolute inset-0 pointer-events-none z-[0] overflow-hidden">
         <motion.img 
-          src="/Untitled design (67).svg" 
+          src="/bg-decoration-1.svg" 
           alt="" 
           animate={{ x: ['-10vw', '110vw'], y: [100, -50] }}
           transition={{ repeat: Infinity, duration: 25, ease: "linear", delay: 0 }}
           className="absolute top-[20vh] left-0 w-16 opacity-100"
         />
         <motion.img 
-          src="/Untitled design (68).svg" 
+          src="/bg-decoration-2.svg" 
           alt="" 
           animate={{ x: ['-10vw', '110vw'], y: [120, -30] }}
           transition={{ repeat: Infinity, duration: 25, ease: "linear", delay: 1.5 }}
           className="absolute top-[18vh] left-0 w-12 opacity-100"
         />
         <motion.img 
-          src="/Untitled design (67).svg" 
+          src="/bg-decoration-1.svg" 
           alt="" 
           animate={{ x: ['-10vw', '110vw'], y: [80, -70] }}
           transition={{ repeat: Infinity, duration: 25, ease: "linear", delay: 2.5 }}
           className="absolute top-[22vh] left-0 w-10 opacity-100"
         />
         <motion.img 
-          src="/Untitled design (68).svg" 
+          src="/bg-decoration-2.svg" 
           alt="" 
           animate={{ x: ['-10vw', '110vw'], y: [140, -10] }}
           transition={{ repeat: Infinity, duration: 25, ease: "linear", delay: 0.8 }}
@@ -139,7 +153,7 @@ export default function BreatheRoute() {
           
           {/* Subtle decoration */}
           <motion.img 
-            src="/Untitled design (26).svg" 
+            src="/unassigned-asset-3.svg" 
             alt="" 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -152,7 +166,7 @@ export default function BreatheRoute() {
         {/* 4. SUPPORT SECTION */}
         <section className="relative py-20 md:py-48 border-t border-[#E7E5E4]/50 flex flex-col md:flex-row justify-between gap-16">
           <motion.img 
-            src="/Untitled design (63).svg" 
+            src="/cloud-bg-4.svg" 
             alt="" 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -228,7 +242,7 @@ export default function BreatheRoute() {
         {/* 7. FINAL CTA */}
         <section className="relative py-20 md:py-48 border-t border-[#E7E5E4]/50 flex flex-col items-center text-center mb-20">
           <motion.img 
-            src="/Untitled design (35).svg" 
+            src="/cloud-bg-1.svg" 
             alt="" 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
