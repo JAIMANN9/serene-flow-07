@@ -1,8 +1,10 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, CheckCircle2, CloudUpload, Sparkles, HeartHandshake, Brain, Terminal } from "lucide-react";
+import { ArrowRight, CheckCircle2, CloudUpload, Sparkles, HeartHandshake, Brain, Terminal, Loader2 } from "lucide-react";
 import { Nav, Footer } from "./index";
+import { useState, useRef } from "react";
+import { submitCareerApplication } from "../app/actions";
 
 /**
  * CareersRoute Component
@@ -49,12 +51,50 @@ export default function CareersRoute() {
     }
   ];
 
+  // Form states
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
   // Animation variants
   const reveal = {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, margin: "-100px" },
     transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as any },
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setSelectedFile(e.target.files[0]);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    const formData = new FormData(e.currentTarget);
+    if (selectedFile) {
+      formData.set("resume", selectedFile);
+    }
+
+    try {
+      const res = await submitCareerApplication(formData);
+      if (res.success) {
+        setSubmitStatus("success");
+        e.currentTarget.reset();
+        setSelectedFile(null);
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (err) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -167,20 +207,39 @@ export default function CareersRoute() {
                 <p className="text-[#4F6072] text-[15px]">Fill out the form below to apply for any of our open roles.</p>
               </div>
 
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                {submitStatus === "success" && (
+                  <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-2xl p-4 mb-6 flex items-center gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                    <div>
+                      <h4 className="font-bold text-sm">Application Submitted Successfully</h4>
+                      <p className="text-xs opacity-80">We have received your application and will be in touch soon.</p>
+                    </div>
+                  </div>
+                )}
+                {submitStatus === "error" && (
+                  <div className="bg-red-50 border border-red-200 text-red-800 rounded-2xl p-4 mb-6">
+                    <p className="text-sm font-bold">Failed to submit application. Please try again later.</p>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-[13px] font-bold text-[#1E3048] uppercase tracking-wide ml-1">Full Name</label>
+                    <label className="text-[13px] font-bold text-[#1E3048] uppercase tracking-wide ml-1">Full Name *</label>
                     <input 
                       type="text" 
+                      name="fullName"
+                      required
                       placeholder="Jane Doe"
                       className="w-full bg-white/60 border border-white rounded-2xl px-5 py-4 text-[#1E3048] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]/20 transition-all text-[15px] shadow-inner"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[13px] font-bold text-[#1E3048] uppercase tracking-wide ml-1">College Email</label>
+                    <label className="text-[13px] font-bold text-[#1E3048] uppercase tracking-wide ml-1">College Email *</label>
                     <input 
                       type="email" 
+                      name="email"
+                      required
                       placeholder="jane@university.edu"
                       className="w-full bg-white/60 border border-white rounded-2xl px-5 py-4 text-[#1E3048] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]/20 transition-all text-[15px] shadow-inner"
                     />
@@ -188,8 +247,8 @@ export default function CareersRoute() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[13px] font-bold text-[#1E3048] uppercase tracking-wide ml-1">Select Role</label>
-                  <select className="w-full bg-white/60 border border-white rounded-2xl px-5 py-4 text-[#1E3048] focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]/20 transition-all text-[15px] shadow-inner appearance-none cursor-pointer">
+                  <label className="text-[13px] font-bold text-[#1E3048] uppercase tracking-wide ml-1">Select Role *</label>
+                  <select name="role" required className="w-full bg-white/60 border border-white rounded-2xl px-5 py-4 text-[#1E3048] focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]/20 transition-all text-[15px] shadow-inner appearance-none cursor-pointer">
                     <option value="" disabled selected>Select the role you're applying for</option>
                     <option value="buddy">Student Buddy (Peer Counselor)</option>
                     <option value="psychologist">Psychologist (Clinical Team)</option>
@@ -198,9 +257,11 @@ export default function CareersRoute() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-[13px] font-bold text-[#1E3048] uppercase tracking-wide ml-1">Why do you want to join PeaceCode?</label>
+                  <label className="text-[13px] font-bold text-[#1E3048] uppercase tracking-wide ml-1">Why do you want to join PeaceCode? *</label>
                   <textarea 
                     rows={4}
+                    name="reason"
+                    required
                     placeholder="Tell us a bit about your background and motivation..."
                     className="w-full bg-white/60 border border-white rounded-2xl px-5 py-4 text-[#1E3048] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1E3A8A]/20 transition-all text-[15px] shadow-inner resize-none"
                   />
@@ -208,18 +269,37 @@ export default function CareersRoute() {
 
                 <div className="space-y-2">
                   <label className="text-[13px] font-bold text-[#1E3048] uppercase tracking-wide ml-1">Resume / Cover Letter</label>
-                  <div className="w-full border-2 border-dashed border-slate-300 rounded-3xl p-8 flex flex-col items-center justify-center bg-white/30 hover:bg-white/50 transition-colors cursor-pointer group">
+                  <input 
+                    type="file" 
+                    accept=".pdf,.doc,.docx" 
+                    className="hidden" 
+                    ref={fileInputRef} 
+                    onChange={handleFileChange}
+                  />
+                  <div 
+                    onClick={() => fileInputRef.current?.click()}
+                    className="w-full border-2 border-dashed border-slate-300 rounded-3xl p-8 flex flex-col items-center justify-center bg-white/30 hover:bg-white/50 transition-colors cursor-pointer group"
+                  >
                     <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm mb-3 group-hover:scale-110 transition-transform">
                       <CloudUpload className="w-6 h-6 text-[#1E3A8A]" />
                     </div>
-                    <span className="text-[14px] font-semibold text-[#1E3048] mb-1">Click to upload or drag and drop</span>
+                    <span className="text-[14px] font-semibold text-[#1E3048] mb-1">
+                      {selectedFile ? selectedFile.name : "Click to upload or drag and drop"}
+                    </span>
                     <span className="text-[12px] text-slate-500">PDF, DOCX up to 10MB</span>
                   </div>
                 </div>
 
                 <div className="pt-4">
-                  <button className="w-full bg-[#1E3048] text-white font-bold py-5 rounded-2xl hover:bg-[#112255] hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
-                    Submit Application <CheckCircle2 className="w-5 h-5" />
+                  <button 
+                    disabled={isSubmitting}
+                    className="w-full bg-[#1E3048] text-white font-bold py-5 rounded-2xl hover:bg-[#112255] hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <>Submitting <Loader2 className="w-5 h-5 animate-spin" /></>
+                    ) : (
+                      <>Submit Application <CheckCircle2 className="w-5 h-5" /></>
+                    )}
                   </button>
                 </div>
               </form>
