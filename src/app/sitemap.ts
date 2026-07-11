@@ -49,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPages = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date("2026-07-03").toISOString(),
+    lastModified: new Date().toISOString(),
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
@@ -57,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...allPages.map((page) => ({
       url: `${baseUrl}${page.route}`,
-      lastModified: new Date("2026-06-29").toISOString(),
+      lastModified: new Date().toISOString(),
       changeFrequency: page.changeFrequency,
       priority: page.priority,
     })),

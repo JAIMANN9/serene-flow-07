@@ -430,6 +430,24 @@ export default function ScreeningRoute() {
           </motion.div>
         </section>
         
+
+      {/* ── SEO: Cross-Linking Section ── */}
+      <section className="relative z-20 max-w-3xl mx-auto px-6 md:px-10 py-16 text-center">
+        <motion.div {...fadeDelay(0.1)}>
+          <p className="text-xs tracking-[0.2em] uppercase text-[#A8A29E] font-medium mb-6">Continue Your Wellness Journey</p>
+          <p className="text-lg md:text-xl text-[#57534E] font-light leading-relaxed mb-8">
+            Your screening results are just a starting point. If you want to talk about them, <a href="/psychologist" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">connect with a licensed therapist</a> who specializes in student mental health. For immediate relief, try our <a href="/breathe" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">guided breathing exercises</a> or <a href="/peacebot" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">talk to Peace Bot</a> — available 24/7, completely anonymous.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-[#78716C] font-light">
+            <a href="/journal" className="hover:text-[#1C1917] transition-colors duration-300">Guided journaling →</a>
+            <span className="text-[#D6D3D1]">·</span>
+            <a href="/peace-buddies" className="hover:text-[#1C1917] transition-colors duration-300">Anonymous peer support →</a>
+            <span className="text-[#D6D3D1]">·</span>
+            <a href="/gratitude" className="hover:text-[#1C1917] transition-colors duration-300">Gratitude Wall →</a>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Hyper minimalist footer override for Editorial Pages */}
       <div className="relative w-full bg-transparent pt-12 px-6 md:px-12 lg:px-20 max-w-screen-xl mx-auto">
         <style>{`

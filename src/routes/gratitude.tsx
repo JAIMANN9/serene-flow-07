@@ -335,6 +335,24 @@ export default function GratitudeRoute() {
         
       </div>
       
+
+      {/* ── SEO: Cross-Linking Section ── */}
+      <section className="relative z-20 max-w-3xl mx-auto px-6 md:px-10 py-16 text-center">
+        <motion.div {...fadeDelay(0.1)}>
+          <p className="text-xs tracking-[0.2em] uppercase text-[#A8A29E] font-medium mb-6">Continue Your Wellness Journey</p>
+          <p className="text-lg md:text-xl text-[#57534E] font-light leading-relaxed mb-8">
+            Gratitude pairs beautifully with reflection. <a href="/journal" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">Start journaling with guided prompts</a> to process your thoughts more deeply, or try our <a href="/breathe" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">breathing exercises for a 60-second stress reset</a>. When you need someone to talk to, <a href="/peacebot" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">Peace Bot is always here</a>.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-[#78716C] font-light">
+            <a href="/focus" className="hover:text-[#1C1917] transition-colors duration-300">Focus timer →</a>
+            <span className="text-[#D6D3D1]">·</span>
+            <a href="/screening" className="hover:text-[#1C1917] transition-colors duration-300">Free mental health screening →</a>
+            <span className="text-[#D6D3D1]">·</span>
+            <a href="/peace-buddies" className="hover:text-[#1C1917] transition-colors duration-300">Find peer support →</a>
+          </div>
+        </motion.div>
+      </section>
+      
       {/* Hyper minimalist footer override for Gratitude Page */}
       <div className="relative w-full bg-transparent pt-12">
         <style>{`

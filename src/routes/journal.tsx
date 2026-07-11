@@ -364,6 +364,24 @@ export default function JournalRoute() {
         </motion.div>
       </section>
       
+
+      {/* ── SEO: Cross-Linking Section ── */}
+      <section className="relative z-20 max-w-3xl mx-auto px-6 md:px-10 py-16 text-center">
+        <motion.div {...fadeDelay(0.1)}>
+          <p className="text-xs tracking-[0.2em] uppercase text-[#A8A29E] font-medium mb-6">Continue Your Wellness Journey</p>
+          <p className="text-lg md:text-xl text-[#57534E] font-light leading-relaxed mb-8">
+            After journaling, celebrate your small wins on the <a href="/gratitude" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">Gratitude Wall</a>, or try our <a href="/breathe" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">guided breathing exercises</a> to ground yourself before writing. If your feelings feel heavier than usual, <a href="/screening" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">take a free, private clinical screening</a> to understand where you are.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-[#78716C] font-light">
+            <a href="/focus" className="hover:text-[#1C1917] transition-colors duration-300">Focus timer →</a>
+            <span className="text-[#D6D3D1]">·</span>
+            <a href="/peace-buddies" className="hover:text-[#1C1917] transition-colors duration-300">Anonymous peer support →</a>
+            <span className="text-[#D6D3D1]">·</span>
+            <a href="/psychologist" className="hover:text-[#1C1917] transition-colors duration-300">Connect with a therapist →</a>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Hyper minimalist footer override */}
       <div className="relative w-full bg-transparent pt-12">
         <style>{`

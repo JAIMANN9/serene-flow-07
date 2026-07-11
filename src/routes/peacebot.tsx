@@ -844,6 +844,24 @@ export default function PeaceBotRoute() {
         </motion.div>
       </section>
 
+
+      {/* ── SEO: Cross-Linking Section ── */}
+      <section className="relative z-20 max-w-3xl mx-auto px-6 md:px-10 py-16 text-center">
+        <motion.div {...fadeDelay(0.1)}>
+          <p className="text-xs tracking-[0.2em] uppercase text-[#A8A29E] font-medium mb-6">Continue Your Wellness Journey</p>
+          <p className="text-lg md:text-xl text-[#57534E] font-light leading-relaxed mb-8">
+            Peace Bot is just one part of your toolkit. Want to understand where you stand? <a href="/screening" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">Take a free, private clinical screening</a>. Prefer to process your thoughts on paper? Try our <a href="/journal" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">guided journaling with gentle prompts</a>. Ready for human connection? <a href="/peace-buddies" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">Join an anonymous peer support circle</a>.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-[#78716C] font-light">
+            <a href="/breathe" className="hover:text-[#1C1917] transition-colors duration-300">Breathing exercises →</a>
+            <span className="text-[#D6D3D1]">·</span>
+            <a href="/focus" className="hover:text-[#1C1917] transition-colors duration-300">Focus timer →</a>
+            <span className="text-[#D6D3D1]">·</span>
+            <a href="/psychologist" className="hover:text-[#1C1917] transition-colors duration-300">Connect with a therapist →</a>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Footer override */}
       <div className="relative w-full bg-transparent pt-12 px-6 md:px-12 lg:px-20 max-w-screen-xl mx-auto">
         <style>{`

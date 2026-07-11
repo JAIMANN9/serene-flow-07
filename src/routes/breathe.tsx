@@ -252,6 +252,24 @@ export default function BreatheRoute() {
 
       </div>
 
+
+      {/* ── SEO: Cross-Linking Section ── */}
+      <section className="relative z-20 max-w-3xl mx-auto px-6 md:px-10 py-16 text-center">
+        <motion.div {...fadeDelay(0.1)}>
+          <p className="text-xs tracking-[0.2em] uppercase text-[#A8A29E] font-medium mb-6">Continue Your Wellness Journey</p>
+          <p className="text-lg md:text-xl text-[#57534E] font-light leading-relaxed mb-8">
+            Pair your breathing practice with our <a href="/focus" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">focus timer for distraction-free study sessions</a>, or <a href="/journal" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">reflect on how you're feeling in your private journal</a>. If your anxiety feels persistent, <a href="/screening" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">take a free, private clinical screening</a> to better understand where you are.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-[#78716C] font-light">
+            <a href="/peacebot" className="hover:text-[#1C1917] transition-colors duration-300">Talk to Peace Bot →</a>
+            <span className="text-[#D6D3D1]">·</span>
+            <a href="/peace-buddies" className="hover:text-[#1C1917] transition-colors duration-300">Find peer support →</a>
+            <span className="text-[#D6D3D1]">·</span>
+            <a href="/psychologist" className="hover:text-[#1C1917] transition-colors duration-300">Connect with a therapist →</a>
+          </div>
+        </motion.div>
+      </section>
+
       {/* FOOTER (Minimal Override) */}
       <div className="relative w-full bg-transparent mt-10">
         <style>{`

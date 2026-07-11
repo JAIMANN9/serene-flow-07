@@ -242,6 +242,24 @@ export default function FocusRoute() {
 
       </div>
 
+
+      {/* ── SEO: Cross-Linking Section ── */}
+      <section className="relative z-20 max-w-3xl mx-auto px-6 md:px-10 py-16 text-center">
+        <motion.div {...fadeDelay(0.1)}>
+          <p className="text-xs tracking-[0.2em] uppercase text-[#A8A29E] font-medium mb-6">Continue Your Wellness Journey</p>
+          <p className="text-lg md:text-xl text-[#57534E] font-light leading-relaxed mb-8">
+            Between study blocks, try our <a href="/breathe" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">guided breathing exercises for instant anxiety relief</a>, or <a href="/journal" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">capture your thoughts in a private guided journal</a>. Celebrate your progress on the <a href="/gratitude" className="underline underline-offset-4 decoration-[#A8A29E]/40 hover:text-[#1C1917] transition-colors duration-300">Gratitude Wall</a> — because finishing a study session is a win worth sharing.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-[#78716C] font-light">
+            <a href="/peacebot" className="hover:text-[#1C1917] transition-colors duration-300">Talk to Peace Bot →</a>
+            <span className="text-[#D6D3D1]">·</span>
+            <a href="/screening" className="hover:text-[#1C1917] transition-colors duration-300">Take a free screening →</a>
+            <span className="text-[#D6D3D1]">·</span>
+            <a href="/peace-buddies" className="hover:text-[#1C1917] transition-colors duration-300">Find peer support →</a>
+          </div>
+        </motion.div>
+      </section>
+
       {/* FOOTER (Minimal Override) */}
       <div className="relative w-full bg-transparent mt-10">
         <style>{`
