@@ -219,8 +219,6 @@ export default function CareersRoute() {
                 className="space-y-6" 
                 onSubmit={handleSubmit}
                 name="careers-application"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
               >
                 {/* Hidden inputs required for Netlify Forms routing */}
                 <input type="hidden" name="form-name" value="careers-application" />
