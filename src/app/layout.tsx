@@ -201,6 +201,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           "https://www.linkedin.com/company/peacecode/",
           "https://www.linkedin.com/company/peacecode-in/"
         ],
+        "subOrganization": {
+          "@type": "MedicalBusiness",
+          "name": "PeaceCode for Psychologists",
+          "url": "https://psychologist.peacecode.in"
+        },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Peace Code Student Mental Health Services",

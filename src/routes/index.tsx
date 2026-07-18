@@ -704,6 +704,9 @@ export function Nav() {
         </motion.nav>
 
         <motion.div layout className="flex items-center shrink-0">
+          <a href="https://psychologist.peacecode.in" target="_blank" rel="noopener" className={`hidden md:block mr-5 text-[14px] font-medium transition-colors duration-500 hover:opacity-100 ${scrolled ? "text-slate-600 opacity-80" : "text-white opacity-80"}`}>
+            For Psychologists
+          </a>
           <a href="https://app.peacecode.in/auth" className={`hidden sm:inline-flex items-center rounded-full px-6 py-2.5 text-[14px] font-medium transition-all duration-500 ${scrolled ? "bg-slate-900 text-white shadow-sm hover:bg-slate-800" : "bg-white text-slate-900 hover:bg-white/90 shadow-sm"}`}>
             Log In
           </a>
@@ -733,6 +736,9 @@ export function Nav() {
           {navItemsData.map((item) => (
             <MobileNavItem key={item.href} item={item} setOpen={setOpen} />
           ))}
+          <a href="https://psychologist.peacecode.in" target="_blank" rel="noopener" className="py-2 text-base font-medium text-slate-500 hover:text-slate-700 transition-colors">
+            For Psychologists
+          </a>
           <a href="https://app.peacecode.in/auth" className="sm:hidden text-center rounded-full px-5 py-2.5 text-sm font-medium mt-3 self-start bg-slate-900 text-white shadow-sm w-full block">
             Log In
           </a>
@@ -2269,7 +2275,7 @@ export function Footer() {
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* LEFT: hook + CTAs */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-4">
             <h2
               className="mb-4 max-w-sm font-serif"
               style={{
@@ -2313,8 +2319,8 @@ export function Footer() {
           </div>
 
           {/* CENTER: link grid */}
-          <div className="lg:col-span-5">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="lg:col-span-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {columns.map((c) => (
                 <div key={c.h}>
                   <h4
@@ -2343,6 +2349,32 @@ export function Footer() {
                   ))}
                 </div>
               ))}
+              <div>
+                <h4
+                  className="mb-4"
+                  style={{
+                    color: "#0F172A",
+                    fontWeight: 600,
+                    fontSize: 13,
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  For Professionals
+                </h4>
+                <p className="mb-4 text-[13px] text-[#475569] leading-relaxed">
+                  The all-in-one clinical dashboard for verified psychologists.
+                </p>
+                <a
+                  href="https://psychologist.peacecode.in"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Open PeaceCode for Psychologists platform"
+                  className="inline-flex items-center gap-2 rounded-full text-[13px] font-medium px-5 py-2.5 bg-slate-900 text-white hover:bg-slate-800 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                >
+                  PeaceCode for Psychologists →
+                </a>
+              </div>
             </div>
           </div>
 
@@ -2587,6 +2619,30 @@ function useDecorScroll() {
       window.removeEventListener("resize", onScroll);
     };
   }, []);
+}
+
+function ForPsychologistsCTA() {
+  return (
+    <section className="py-24 px-6 md:px-10 bg-slate-50 border-t border-slate-100">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="font-serif text-3xl md:text-4xl text-slate-900 font-light mb-6">Are you a psychologist?</h2>
+        <p className="text-slate-600 text-[15px] md:text-base leading-relaxed mb-10 max-w-2xl mx-auto">
+          We built a dedicated clinical platform for verified psychologists — bookings, notes, assessments, telehealth, and billing in one place. Purpose-built for practice, not repurposed from generic tools.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+          <a href="https://psychologist.peacecode.in" target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide transition-all bg-slate-900 text-white hover:bg-slate-800 shadow-sm w-full sm:w-auto justify-center">
+            Explore PeaceCode for Psychologists
+          </a>
+          <a href="https://psychologist.peacecode.in/auth" target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium tracking-wide transition-all bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 shadow-sm w-full sm:w-auto justify-center">
+            Sign in to your dashboard
+          </a>
+        </div>
+        <p className="text-[11px] text-slate-500 uppercase tracking-widest font-semibold">
+          Used by clinicians across India · DPDP-compliant · HIPAA-aligned
+        </p>
+      </div>
+    </section>
+  );
 }
 
 /**
@@ -2882,6 +2938,7 @@ export default function Index() {
         </div>
 
         <div className="relative z-10">
+          <ForPsychologistsCTA />
           <ClosingCTA />
           <Footer />
         </div>
