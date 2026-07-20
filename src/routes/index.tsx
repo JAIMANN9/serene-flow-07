@@ -532,6 +532,7 @@ const navItemsData: NavDropdownData[] = [
       columns: [
         {
           items: [
+            { label: "Students", href: "https://app.peacecode.in/auth" },
             { label: "Psychologists", href: "https://psychologist.peacecode.in" },
             { label: "Colleges", href: "https://colleges.peacecode.in", rel: "noopener" },
             { label: "Parents", href: "#" },
@@ -2260,6 +2261,7 @@ export function Footer() {
     {
       h: "For",
       links: [
+        { label: "Students", href: "https://app.peacecode.in/auth" },
         { label: "Psychologists", href: "https://psychologist.peacecode.in" },
         { label: "Colleges", href: "https://colleges.peacecode.in", rel: "noopener" },
         { label: "Parents", href: "#" },
