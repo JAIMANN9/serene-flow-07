@@ -2395,32 +2395,7 @@ export function Footer() {
                   ))}
                 </div>
               ))}
-              <div>
-                <h4
-                  className="mb-4"
-                  style={{
-                    color: "#0F172A",
-                    fontWeight: 600,
-                    fontSize: 13,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  For Professionals
-                </h4>
-                <p className="mb-4 text-[13px] text-[#475569] leading-relaxed">
-                  The all-in-one clinical dashboard for verified psychologists.
-                </p>
-                <a
-                  href="https://psychologist.peacecode.in"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="Open PeaceCode for Psychologists platform"
-                  className="inline-flex items-center gap-2 rounded-full text-[13px] font-medium px-5 py-2.5 bg-slate-900 text-white hover:bg-slate-800 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-                >
-                  PeaceCode for Psychologists →
-                </a>
-              </div>
+
             </div>
           </div>
 
