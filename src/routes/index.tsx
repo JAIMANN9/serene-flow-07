@@ -449,7 +449,7 @@ function CloudBridge({ fill, flip = false }: { fill: string; flip?: boolean }) {
 
 type DropdownCol = {
   header?: string;
-  items: { label: string; href: string }[];
+  items: { label: string; href: string; rel?: string }[];
 };
 
 type NavDropdownData = {
@@ -525,25 +525,64 @@ const navItemsData: NavDropdownData[] = [
     label: "Resources",
     href: "/resources",
   },
+  {
+    label: "For",
+    href: "#",
+    dropdown: {
+      columns: [
+        {
+          items: [
+            { label: "Psychologists", href: "https://psychologist.peacecode.in" },
+            { label: "Colleges", href: "https://colleges.peacecode.in", rel: "noopener" },
+            { label: "Parents", href: "#" },
+          ],
+        },
+      ],
+    },
+  },
 ];
 
 function NavItem({ item, scrolled }: { item: NavDropdownData; scrolled: boolean }) {
   const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+
+  const isOpen = hovered || focused;
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      setFocused(!focused);
+    } else if (e.key === "Escape") {
+      setFocused(false);
+      setHovered(false);
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent) => {
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      setFocused(false);
+    }
+  };
 
   return (
     <div
       className="relative"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onFocus={() => setFocused(true)}
+      onBlur={handleBlur}
     >
       <Link
         href={item.href}
-        className={`relative px-5 py-2.5 rounded-full transition-all duration-500 font-medium inline-block tracking-wide ${hovered
+        className={`relative px-5 py-2.5 rounded-full transition-all duration-500 font-medium inline-block tracking-wide ${isOpen
             ? "bg-[#E2D9FF] text-slate-900 drop-shadow-none"
             : scrolled
               ? "text-slate-900 hover:text-slate-600 drop-shadow-none"
               : "text-white hover:text-white/80"
           }`}
+        aria-haspopup={item.dropdown ? "true" : undefined}
+        aria-expanded={item.dropdown ? isOpen : undefined}
+        onKeyDown={item.dropdown ? handleKeyDown : undefined}
       >
         {item.label}
       </Link>
@@ -569,6 +608,7 @@ function NavItem({ item, scrolled }: { item: NavDropdownData; scrolled: boolean 
                     <Link
                       key={sub.label}
                       href={sub.href}
+                      rel={sub.rel}
                       className="text-[15px] font-medium transition-colors duration-500 whitespace-nowrap drop-shadow-none text-slate-800 hover:text-[#1E3A8A]"
                     >
                       {sub.label}
@@ -631,6 +671,7 @@ function MobileNavItem({ item, setOpen }: { item: NavDropdownData, setOpen: (v: 
                 <Link
                   key={sub.label}
                   href={sub.href}
+                  rel={sub.rel}
                   onClick={() => setOpen(false)}
                   className="text-[14px] text-slate-600 hover:text-slate-900 py-0.5 font-medium transition-colors"
                 >
@@ -704,9 +745,6 @@ export function Nav() {
         </motion.nav>
 
         <motion.div layout className="flex items-center shrink-0">
-          <a href="https://psychologist.peacecode.in" target="_blank" rel="noopener" className={`hidden md:block mr-5 text-[14px] font-medium transition-colors duration-500 hover:opacity-100 ${scrolled ? "text-slate-600 opacity-80" : "text-white opacity-80"}`}>
-            For Psychologists
-          </a>
           <a href="https://app.peacecode.in/auth" className={`hidden sm:inline-flex items-center rounded-full px-6 py-2.5 text-[14px] font-medium transition-all duration-500 ${scrolled ? "bg-slate-900 text-white shadow-sm hover:bg-slate-800" : "bg-white text-slate-900 hover:bg-white/90 shadow-sm"}`}>
             Log In
           </a>
@@ -736,9 +774,6 @@ export function Nav() {
           {navItemsData.map((item) => (
             <MobileNavItem key={item.href} item={item} setOpen={setOpen} />
           ))}
-          <a href="https://psychologist.peacecode.in" target="_blank" rel="noopener" className="py-2 text-base font-medium text-slate-500 hover:text-slate-700 transition-colors">
-            For Psychologists
-          </a>
           <a href="https://app.peacecode.in/auth" className="sm:hidden text-center rounded-full px-5 py-2.5 text-sm font-medium mt-3 self-start bg-slate-900 text-white shadow-sm w-full block">
             Log In
           </a>
@@ -2187,7 +2222,7 @@ function BentoFeatures() {
  * @returns {JSX.Element} The rendered Footer.
  */
 export function Footer() {
-  const columns: { h: string; links: { label: string; href: string }[] }[] = [
+  const columns: { h: string; links: { label: string; href: string; rel?: string }[] }[] = [
     {
       h: "About Us",
       links: [
@@ -2221,6 +2256,14 @@ export function Footer() {
         { label: "Videos", href: "/resources" },
         { label: "Assessments", href: "/screening" },
       ]
+    },
+    {
+      h: "For",
+      links: [
+        { label: "Psychologists", href: "https://psychologist.peacecode.in" },
+        { label: "Colleges", href: "https://colleges.peacecode.in", rel: "noopener" },
+        { label: "Parents", href: "#" },
+      ],
     },
   ];
 
@@ -2339,6 +2382,7 @@ export function Footer() {
                     <Link
                       key={l.label}
                       href={l.href}
+                      rel={l.rel}
                       className={`${navLink} mb-2 block font-medium`}
                       style={{ color: "#475569" }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = "#0F172A")}
